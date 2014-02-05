@@ -8,6 +8,9 @@ v0.4
 
 **Drafted by: **the UK Government Linked Data Working Group (UKGovLD), including representatives from public-sector departments, agencies and local government, linked-data businesses and the broader linked-data community. 
 
+_This document will be updated through any outcomes of the [standards.data.gov.uk](http://standards.data.gov.uk) process and published within the UKGovLD section of [data.gov.uk](http://data.gov.uk/linked-data) in February 2014.  Issues can be raised and versioning will be controlled through the [UKGovLD Github repositories](https://github.com/UKGovLD/)_
+_Please also see [URI Patterns for Location](https://github.com/UKGovLD/URI-patterns-location) for Location and INSPIRE specific patterns specialisation of this guidance_
+
 # Introduction
 
 This document forms part of a developing series to support understanding and implementation of linked data or the wider use of URIs as persistent identifiers. This guide has been built on top of the experience of implementation driven by the previous public sector guidance [[1](#bookmark=id.izhg4kr3qqdw)]. With sufficient adoption, common patterns and practices create reinforcing ‘echos’ across a range of data publications such that publishers and data consumers increasingly recognise the use of the patterns and the choices implied by their use. In general guidance, such as given here with respect to URI patterns for data publishing,  aims to encapsulate best practice and minimise divergence of approach. Adoption of guidance, by its very nature, is voluntary, however, it is available to be referenced, and even mandated, as an element of policy by a data publishing authority with authoritative control over the corresponding domain name. 
@@ -28,7 +31,8 @@ This document extends earlier guidance [[1]](#bookmark=id.izhg4kr3qqdw) to bette
 
 ### URI Sets
 
-A URI Set, defined as:	"a collection of reference data published using URIs, about a single concept, governed from a single source." [[1]](#bookmark=id.izhg4kr3qqdw)
+A URI Set, defined as:
+	"a collection of reference data published using URIs, about a single concept, governed from a single source." [[1]](#bookmark=id.izhg4kr3qqdw)
 
 A URI Set is usually comprised of:
 
@@ -79,6 +83,7 @@ Linked data publishing makes extensive use of [HTTP URI](#bookmark=id.in2hhs5y1n
 The space of http URIs is huge and a linked data publisher needs to consider to how they are going to use a portion of  http URI space, to support their linked data publication. There are two perspectives to consider:
 
 * The administrative perspective is focussed on (recursively) dividing up a URI space into subspaces and delegating the publishing and governance authority over the resulting subspace to another party - ultimately to the point where individual URI assigned to individual ‘things’.  This is primarily concerned with avoiding duplicate use of the same URI both at a given moment and over time. Ideally, a given URI should only ever be used to refer to one ‘thing’, although that ‘thing’ need not be static. Its state may change over time eg. the front page of a newspaper or a weather forecast for a particular area. The use of natural keys in the formation of URIs aids in the establishment of distinct URI for distinct ‘things’. 
+
 
 * The operational perspective on a URI spaces is concerned with the the practicalities of routing HTTP protocol requests to the correct pieces of infrastructure (servers) to provided the expected response.
 
@@ -164,15 +169,20 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
 
 The URI patterns are presented in two parts:
 
-* a common left hand part`http://{domain}{/collection*}`
+* a common left hand part
+`http://{domain}{/collection*}
+`
 
 * a type specific right hand part
 
-    * for URI Sets (reference items and reference data) where `{type}=’id’ or ’doc’``[/{type}][/{concept}/{key}]*[/{concept}][#id] `
+    * for URI Sets (reference items and reference data) where `{type}=’id’ or ’doc’`
+`[/{type}][/{concept}/{key}]*[/{concept}][#id] `
 
-    * for vocabularies and definitions where `{type}=’def’[/{type}]{/vocabulary*}[/{term}][#{term}] `
+    * for vocabularies and definitions where `{type}=’def’
+[/{type}]{/vocabulary*}[/{term}][#{term}] `
 
-    * for datasets and data items where `{type}=’data’[/{type}]{/dataset*}[/{concept}/{key}]*[/{prop}]`
+    * for datasets and data items where `{type}=’data’
+[/{type}]{/dataset*}[/{concept}/{key}]*[/{prop}]`
 
 The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0" [ [1]](#heading=h.qsh70q)[ ](#heading=h.qsh70q)are a subset of those in the this section. In particular they omit the **{/collection*}** components and do not include a **{type}** of **‘data’** introduced here for datasets and data items.
 
@@ -184,11 +194,16 @@ The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0"
 
 where
 
-**{domain}******is an internet DNS domain name. Administratively and operationally this delegates authority over the subordinate URI space to the organisational entity with administrative rights for the domain. A** {domain}** authority may create subdomains of the form **{subdomain}.{domain}** as a means of creating a delegated URI space. The governance of a subdomain may fall within scope of the authority for the parent domain; or it may be delegated to a subordinate governance authority
+**{domain}****
+**is an internet DNS domain name. Administratively and operationally this delegates authority over the subordinate URI space to the organisational entity with administrative rights for the domain. 
 
-**{/collection*}**is a short sequence of URI path segments, typically one or two, that serve as a delegation point for administrative authority over the delegated URI space. These path segments fields, can also be used to affect the top-level routing of corresponding request to infrastructure. Path segments in** {/collection*} **should avoid  literal values commonly used by the **{type} **component, specifically "**def**" “**id**”, “**doc**”, “**data**” and “**so**”. This avoids a path segment within **{/collection*}** being confused with a **{type}** component (if present). 
+A** {domain}** authority may create subdomains of the form **{subdomain}.{domain}** as a means of creating a delegated URI space. The governance of a subdomain may fall within scope of the authority for the parent domain; or it may be delegated to a subordinate governance authority
+
+**{/collection*}
+**is a short sequence of URI path segments, typically one or two, that serve as a delegation point for administrative authority over the delegated URI space. These path segments fields, can also be used to affect the top-level routing of corresponding request to infrastructure. Path segments in** {/collection*} **should avoid  literal values commonly used by the **{type} **component, specifically "**def**" “**id**”, “**doc**”, “**data**” and “**so**”. This avoids a path segment within **{/collection*}** being confused with a **{type}** component (if present). 
 
 ### 
+
 
 ### Choosing Domain and Collection Names
 
@@ -216,7 +231,8 @@ In particular, the combination of **{domain} **and **{/collection*}** will …
 
 * be expected to be maintained over the long term;
 
-* not contain the name of the department or agency currently defining and naming a concept, as that may bere-assigned (NOTE: Whilst this is generally accepted as a best practice, there are situations where implicit trust or confidence in a data publication is vested in organisational identity as manifest in the domain name of a URI. Typically this will occur where there is some level of long-term brand capital accrued by an organisational entity. However, early consideration should still be given to the likelihood of future identity change leading to pressures to change published URI and to transition arrangements should such a change actually occur.).
+* not contain the name of the department or agency currently defining and naming a concept, as that may be
+re-assigned (NOTE: Whilst this is generally accepted as a best practice, there are situations where implicit trust or confidence in a data publication is vested in organisational identity as manifest in the domain name of a URI. Typically this will occur where there is some level of long-term brand capital accrued by an organisational entity. However, early consideration should still be given to the likelihood of future identity change leading to pressures to change published URI and to transition arrangements should such a change actually occur.).
 
 * support a direct response, or redirect or proxy to servers provided by the publishing authority;
 
@@ -256,13 +272,15 @@ Publishing responsibility for URI Sets, Datasets and Vocabularies can be delegat
 
 Domain, including subdomain, and collection names should be aligned with key and **invariant **facets of the data publication such as the function of government that it serves. In particular, as far as is possible, they should **NOT **be aligned with internal organisational structure such as department name.  They should be understandable by the public, rather than reflecting how government is organisatised.
 
+
 **Single segment collection names:**
 
 * http://environment.data.gov.uk/catchment-management
 
 * http://environment.data.gov.uk/bathing-water-quality
 
-**Multiple segment collection names:**
+
+**Multiple segment collection names:**
 
 * http://data.scotland.gov.uk/environment/bathing-water-quality
 
@@ -286,9 +304,13 @@ Note that the example URI in the table below are for illustrative purposes. Most
   </tr>
   <tr>
     <td>URI Set URI</td>
-    <td>{prefix}/id/{concept} or {prefix}/{concept}#id</td>
+    <td>{prefix}/id/{concept} or 
+{prefix}/{concept}#id
+</td>
     <td>Version 1.0 examples
-http://education.data.gov.uk/id/schoolhttp://transport.data.gov.uk/id/roadhttp://transport.data.gov.uk/road#id 
+http://education.data.gov.uk/id/school
+http://transport.data.gov.uk/id/road
+http://transport.data.gov.uk/road#id 
 
 With {/collection*}
 http://environment.data.gov.uk/bathing-water-quality/id/bathing-water
@@ -298,9 +320,16 @@ http://environment.data.gov.uk/catchment-management/id/river-basin-district
 http://environment.data.gov.uk/catchment-management/id/waterbody</td>
   </tr>
   <tr>
-    <td>Identifier URI(for reference items)</td>
-    <td>{prefix}/id[/{concept}/{key}]* or {prefix}[/{concept}/{key}]*#id</td>
-    <td>Version 1.0 exampleshttp://transport.data.gov.uk/id/station/BPWhttp://transport.data.gov.uk/station/BPW#id http://transport.data.gov.uk/road/M5#id http://transport.data.gov.uk/road/M5/junction/24#id
+    <td>Identifier URI
+(for reference items)</td>
+    <td>{prefix}/id[/{concept}/{key}]* or 
+{prefix}[/{concept}/{key}]*#id</td>
+    <td>Version 1.0 examples
+http://transport.data.gov.uk/id/station/BPW
+http://transport.data.gov.uk/station/BPW#id 
+
+http://transport.data.gov.uk/road/M5#id 
+http://transport.data.gov.uk/road/M5/junction/24#id
 
 With {/collection*}
 http://environment.data.gov.uk/catchment-management/id/river-basin-district/8 
@@ -308,15 +337,21 @@ http://environment.data.gov.uk/catchment-management/id/river-basin-district/8
 http://environment.data.gov.uk/catchment-management/id/waterbody/GB108050014050  </td>
   </tr>
   <tr>
-    <td>Document URI(for reference data)</td>
-    <td>reference data for single reference items:{prefix}/doc[/{concept}/{key}]* or {prefix}[/{concept}/{key}]*
+    <td>Document URI
+(for reference data)</td>
+    <td>reference data for single reference items:
+{prefix}/doc[/{concept}/{key}]* or 
+{prefix}[/{concept}/{key}]*
 
 optionally, reference data for lists of reference items
-{prefix}/doc/{concept}/{key}]*/{concept} or {prefix}[/{concept}/{key}]*/{concept}</td>
+{prefix}/doc/{concept}/{key}]*/{concept} or 
+{prefix}[/{concept}/{key}]*/{concept}</td>
     <td>Version 1.0 examples
-http://transport.data.gov.uk/doc/station/BPW http://transport.data.gov.uk/station/BPW 
+http://transport.data.gov.uk/doc/station/BPW 
+http://transport.data.gov.uk/station/BPW 
 
-http://transport.data.gov.uk/road/M5  http://transport.data.gov.uk/road/M5/junction/24 
+http://transport.data.gov.uk/road/M5  
+http://transport.data.gov.uk/road/M5/junction/24 
 
 With {/collection*}
 http://environment.data.gov.uk/catchment-management/doc/river-basin-district/8  
@@ -331,7 +366,8 @@ http://environment.data.gov.uk/catchment-management/doc/waterbody/GB108050014050
     <td>Vocabulary URI
 (for vocabularies, ontologies, concept schemes, codelists and schema)</td>
     <td>{prefix}/def{/vocabulary*}</td>
-    <td>Version 1.0 exampleshttp://transport.data.gov.uk/def/traffic 
+    <td>Version 1.0 examples
+http://transport.data.gov.uk/def/traffic 
 
 http://environment.data.gov.uk/def/bathing-water
 
@@ -347,9 +383,11 @@ http://environment.data.gov.uk/catchment-management/def/waterbody-classification
   <tr>
     <td>Vocabulary Term URI
 (for term definitions within a vocabularies, ontologies, concept schemes, codelists and schema)</td>
-    <td>{prefix}/def{/vocabulary*}/{term} or {prefix}}/def{/vocabulary*}#{term}</td>
+    <td>{prefix}/def{/vocabulary*}/{term} or 
+{prefix}}/def{/vocabulary*}#{term}</td>
     <td>Version 1.0 examples
 http://transport.data.gov.uk/def/traffic/Road
+
 http://environment.data.gov.uk/def/bathing-water/CoastalBathingWater
 
 http://transport.data.gov.uk/def/vehicle#hgv 
@@ -367,14 +405,17 @@ http://environment.data.gov.uk/catchment-management/def/classification/classifca
     <td>{prefix}/data{/dataset*}</td>
     <td>Version 1.0 examples
 http://environment.data.gov.uk/data/bathing-water-quality 
+
 http://environment.data.gov.uk/data/bathing-water-quality/compliance
  
 http://environment.data.gov.uk/data/waterbody/classification 
 
 With {/collection*}
-http://environment.data.gov.uk/bathing-water-quality/data/compliance-assessment 
+http://environment.data.gov.uk/bathing-water-quality
+/data/compliance-assessment 
 
-http://environment.data.gov.uk/bathing-water-quality/data/sample-assessment 
+http://environment.data.gov.uk/bathing-water-quality
+/data/sample-assessment 
 
 http://environment.data.gov.uk/catchment-management/data/classification-predicted-outcome  
 
@@ -385,19 +426,30 @@ http://environment.data.gov.uk/catchment-management/data/classification-objectiv
 (for data items within datasets).</td>
     <td>{prefix}/data{/dataset*}[/{concept}/{key}]*</td>
     <td>Version 1.0 examples
-http://environment.data.gov.uk/data/bathing-water-quality/compliance/point/03600/year/2012 http://environment.data.gov.uk/data/waterbody/classification/waterbody/GB109055042060/year/2009/item/wbc_55 
+http://environment.data.gov.uk/data/bathing-water-quality/compliance/point/03600/year/2012 
+
+http://environment.data.gov.uk/data/waterbody/classification/waterbody/GB109055042060/year/2009
+/item/wbc_55 
 
 With {/collection*}
-http://environment.data.gov.uk/bathing-water-quality/data/compliance-assessment/point/03600/year/2012  http://environment.data.gov.uk/catchment-management/data/classification/waterbody/GB109055042060/year/2009/item/wbc_55 </td>
+http://environment.data.gov.uk/bathing-water-quality
+/data/compliance-assessment/point/03600/year/2012  
+
+http://environment.data.gov.uk/catchment-management/data/classification/waterbody/GB109055042060
+/year/2009/item/wbc_55 </td>
   </tr>
 </table>
 
 
 where
 
-**{prefix}** substitutes for the left-hand side patterns presented in the [preceding section](#heading=h.44sinio)[.](#heading=h.44sinio)
+**{prefix}** 
+substitutes for the left-hand side patterns presented in the [preceding section](#heading=h.44sinio)[.](#heading=h.44sinio)
 
-**{type}**is an optional **discriminator **use to discriminate between reference items, reference data and vocabularies that share a common {concept} within a URI set. It may also serves as a weak ‘hint’ (NOTE:  It is helpful if the values used in URI path segments can appeal to human intuitions. However, strictly URI are opaque in the sense that humans (and machines) should not expect to make accurate guesses about what a given URI identifies solely from its spelling. It is better to rely on explicit statements in content (whether narrative or in some formalism). Nevertheless, URI that giving correct intuitions to developers and end-users of the data are useful.) of the kind of thing the URI might refer to.Such ‘hint’s can be helpful to human consumers of the URI in terms of appealing to intuitions established by consistent usage. Typical token values used in the **{type}** field are:
+**{type}
+**is an optional **discriminator **use to discriminate between reference items, reference data and vocabularies that share a common {concept} within a URI set. It may also serves as a weak ‘hint’ (NOTE:  It is helpful if the values used in URI path segments can appeal to human intuitions. However, strictly URI are opaque in the sense that humans (and machines) should not expect to make accurate guesses about what a given URI identifies solely from its spelling. It is better to rely on explicit statements in content (whether narrative or in some formalism). Nevertheless, URI that giving correct intuitions to developers and end-users of the data are useful.) of the kind of thing the URI might refer to.
+Such ‘hint’s can be helpful to human consumers of the URI in terms of appealing to intuitions established by consistent usage. Typical token values used in the **{type}** field are:
+
 
         * **def **for vocabularies and terms;
 
@@ -409,17 +461,27 @@ where
 
         * **so** for spatial objects
 
-**{concept}**provides a human readable ‘hint’ indicating some primary concept associated with a vocabulary or a URI set or an indicative name for a dataset or subset eg. school, station, road, local-authority, bathing-water, uksi, traffic-count.
+**{concept}
+**provides a human readable ‘hint’ indicating some primary concept associated with a vocabulary or a URI set or an indicative name for a dataset or subset eg. school, station, road, local-authority, bathing-water, uksi, traffic-count.
 
-{**key}**is a field that discriminates one item from another within a URI set, vocabulary or dataset. Typical **{key} **values are directly derived from a natural key or coded value within the data being published.
 
-**{/vocabulary*}**is a short multi-segment (typically single segment) component used to gather term definitions that are organised and managed together as a vocabulary (schema, codelist, concept scheme or ontology). For URI Sets, it is common for the **{/vocabulary*}** component to be aligned with the** {concept}** components in Identifier and Document URI.component(s) used by  reference item.
+{**key}
+**is a field that discriminates one item from another within a URI set, vocabulary or dataset. Typical **{key} **values are directly derived from a natural key or coded value within the data being published.
 
-**{concept}/{key}**repeating field pairs that together identify some entity and related subordinate entities eg. a road junction and exit as subordinates of a road:`../road/M5../road/M5/junction/24../road/M5/junction/24/exit-slip/southbound`
+**{/vocabulary*}**
+is a short multi-segment (typically single segment) component used to gather term definitions that are organised and managed together as a vocabulary (schema, codelist, concept scheme or ontology). For URI Sets, it is common for the **{/vocabulary*}** component to be aligned with the** {concept}** components in Identifier and Document URI.component(s) used by  reference item.
+
+**{concept}/{key}
+**repeating field pairs that together identify some entity and related subordinate entities eg. a road junction and exit as subordinates of a road:
+`../road/M5
+../road/M5/junction/24
+../road/M5/junction/24/exit-slip/southbound`
 
 # The Publishing Commitment
 
-A consequence of publishing URI Sets with the explicit intention that they serve as common points of reference is that publishers of data who make reference to the members (reference items) of a URI Set (individual schools, hospitals, administrative regions, spending categories etc.) come to depend on both the [Identifier URI](#bookmark=id.7tcuws422kuj) for the reference items and the reference data that is accessible via those URI.Publishing a URI Set is a long-term commitment. The long-term persistence of the resolution mechanism (ie. web dereference) from reference identifiers to reference data is vital in establishing confidence and trust in their use as a point of reference.
+A consequence of publishing URI Sets with the explicit intention that they serve as common points of reference is that publishers of data who make reference to the members (reference items) of a URI Set (individual schools, hospitals, administrative regions, spending categories etc.) come to depend on both the [Identifier URI](#bookmark=id.7tcuws422kuj) for the reference items and the reference data that is accessible via those URI.
+
+Publishing a URI Set is a long-term commitment. The long-term persistence of the resolution mechanism (ie. web dereference) from reference identifiers to reference data is vital in establishing confidence and trust in their use as a point of reference.
 
 However it needs to  be recognized that in the long-term change is inevitable. Strategies need to be developed for managing transitions such as the  retirement or relocation of a reference data. Such transitions need to respect  the 3rd party dependences that are implicitly created by the existence of URI Sets and the explicit intention that they be reused.
 
@@ -429,11 +491,20 @@ However it needs to  be recognized that in the long-term change is inevitable. S
 
 There are a number of facets which it is tempting to include within the structure of a URI that should be avoided, because they may give rise to more frequent change or attract pressure to relocate reference items and associated reference data in URI space.
 
-* **Publishing Organisation**Coarse grain and fine grain organisational change can lead to changes in publishing responsibility for URI Sets and  Datasets. Some changes are more cosmetic (renaming), others are more structural. Structural changes may result in both division and mergers of work-groups with associated transfers of publishing responsibilities for data. Current responsibility for a publication is best indicated through the use of explicit metadata about a collection or indeed individual items within a collection.
 
-* **Brand, Product or Marketing names**In the commercial sector considerable financial value can accrue to brand - resulting in (some) brand identities becoming long-lived and an object of trust. This effect can occur in the public-sector too, but there is less of a financial incentive toward persistence with respect to brand, product or marketing names. The purpose (function or duty) a publication serves is likely to persist longer than the colloquial name of the dataset or collection (or indeed the name of organisation publishes it).
+* **Publishing Organisation**
+Coarse grain and fine grain organisational change can lead to changes in publishing responsibility for URI Sets and  Datasets. Some changes are more cosmetic (renaming), others are more structural. Structural changes may result in both division and mergers of work-groups with associated transfers of publishing responsibilities for data. 
 
-* **Status or Disposition**The status of a URI Set, Dataset or Vocabulary or the disposition of an organisation towards it may change during its lifetime. For example a URI Set or Vocabulary may initially be regarded as being in-draft or might be approved for experimental use. However, once it has matured its status may change or an organisation may adopt it for more widespread use. Status or organisational disposition indications are best made using metadata. Embedding such indications in identifiers should be avoided.`[Editorial Discussion: I’m trying to figure whether data product names are good/bad as collection names. Where there is considerable brand capital (trust) in a ‘brand’ name there is unlikely to be pressure to change it, conversely a failed name/brand is more likely to get attention and be rebranded - the main message here is to avoid ephemeral facets in URI - better infact to have totally opaque facets - but that’s pretty people unfriendly. eg. Land Registry have recently renamed their Price Paid Information (PPI) to Price Paid Data (PPD) maybe for obvious contemporary reasons.]]`
+Current responsibility for a publication is best indicated through the use of explicit metadata about a collection or indeed individual items within a collection.
+
+* **Brand, Product or Marketing names**
+In the commercial sector considerable financial value can accrue to brand - resulting in (some) brand identities becoming long-lived and an object of trust. This effect can occur in the public-sector too, but there is less of a financial incentive toward persistence with respect to brand, product or marketing names. The purpose (function or duty) a publication serves is likely to persist longer than the colloquial name of the dataset or collection (or indeed the name of organisation publishes it).
+
+* **Status or Disposition
+**The status of a URI Set, Dataset or Vocabulary or the disposition of an organisation towards it may change during its lifetime. For example a URI Set or Vocabulary may initially be regarded as being in-draft or might be approved for experimental use. However, once it has matured its status may change or an organisation may adopt it for more widespread use. Status or organisational disposition indications are best made using metadata. Embedding such indications in identifiers should be avoided.
+
+`[Editorial Discussion: I’m trying to figure whether data product names are good/bad as collection names. Where there is considerable brand capital (trust) in a ‘brand’ name there is unlikely to be pressure to change it, conversely a failed name/brand is more likely to get attention and be rebranded - the main message here is to avoid ephemeral facets in URI - better infact to have totally opaque facets - but that’s pretty people unfriendly. eg. Land Registry have recently renamed their Price Paid Information (PPI) to Price Paid Data (PPD) maybe for obvious contemporary reasons.]]`
+
 
 * `[Ed: There must be more facets but I’m coming up short]`
 
@@ -513,6 +584,7 @@ There are numerous[ UK trading funds](http://en.wikipedia.org/wiki/Trading_fund#
 
 Trading fund name and hence the domain names where they operate, are likely to be subject to occasional change. In publishing data at URI that incorporate a trading-fund name eg. companieshouse.gov.uk, ordnance-survey.co.uk, metoffice.com and so forth, consideration should be given to how a future change of corporate identity will would affect the URI used in published data. In particular whether and how a transition would be managed (see [Managing Changes in URI Space](#heading=h.3rdcrjn)[)](#heading=h.3rdcrjn). 
 
+
 Subject to consideration transition issues arising from organisational and ‘brand’ identity change within trading funds, trading funds are likely to organise their data publication under domains such as:
 
 * http://data.{trading-fund}.gov.uk{/collection*}
@@ -545,13 +617,16 @@ Identity change brought about by local-government reorganisation can be addresse
 
 # Definitions
 
-URI Set		"a collection of reference data published using URIs, about a single concept, governed from a single source." [[1]](#heading=h.qsh70q)
+URI Set	
+	"a collection of reference data published using URIs, about a single concept, governed from a single source." [[1]](#heading=h.qsh70q)
 
  
 
-reference dataauthoritative data provided as part of a URI Set about particular reference items.
+reference data
+authoritative data provided as part of a URI Set about particular reference items.
 
-reference itema significant resource (school, station, hospital, statute or Act of Parliament) that is member of a URI Set and about which some reference data has been provided
+reference item
+a significant resource (school, station, hospital, statute or Act of Parliament) that is member of a URI Set and about which some reference data has been provided
 
 # Acknowledgements
 
@@ -561,7 +636,8 @@ TBD
 
 [1]	"Designing URI Sets for the UK Public Sector", [https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector)
 
-[2]	"Study on persistent URIs, with identification of best practices and recommendations on the topic for the MSs and the EC" Interoperability Soultions for Europena Union Adminstrations (ISA) Deliverable D7.1.3[https://joinup.ec.europa.eu/sites/default/files/D7.1.3 - Study on persistent](https://joinup.ec.europa.eu/sites/default/files/D7.1.3%20-%20Study%20on%20persistent) URIs.pdf
+[2]	"Study on persistent URIs, with identification of best practices and recommendations on the topic for the MSs and the EC" Interoperability Soultions for Europena Union Adminstrations (ISA) Deliverable D7.1.3
+[https://joinup.ec.europa.eu/sites/default/files/D7.1.3 - Study on persistent](https://joinup.ec.europa.eu/sites/default/files/D7.1.3%20-%20Study%20on%20persistent) URIs.pdf
 
 [3]	"UKGovLD Registry",  [https://github.com/der/ukl-registry-poc/wiki](https://github.com/der/ukl-registry-poc/wiki) 
 
@@ -703,9 +779,25 @@ When assigning URI for things that are not themselves data or documents, things 
 
 There are two commonly used patterns for assigning URI  to such ‘non-information’ resources.
 
-1. Use a URI with a fragment identifier eg:**../school/100866#id**The natural fragment stripping action of the HTTP protocol means that the HTTP retrieval request will be made using the URI stripped of its fragment. The content of the HTTP response, served directly with a 200 OK status code, is expected to describe the ‘thing’ (a school in the case of the example above) using its assigned URI, ie. **../school/100866#id** in the case of this example, as a subject identifier.Where the fragment identifier pattern is used, the fragment "**id**" shall always imply that the URI identifies a (real-world) "thing".
+1. Use a URI with a fragment identifier eg:
 
-2. Use a URI without a fragment identifier eg:**../id/school/100866** and arrange for a 303 (See Other) response that redirects to a ‘document’ (an information-resource) eg:**../doc/school/100866**a distinct resource, that describes the ‘thing’ (school, organisation etc.) using the assigned URI as a subject identifier.Where the 303-redirect pattern is used for identifying (real-world) "things" as and their associated documents, the **{type} **terms "**id**" and "**doc**" shall be used respectively
+**../school/100866#id
+
+**The natural fragment stripping action of the HTTP protocol means that the HTTP retrieval request will be made using the URI stripped of its fragment. The content of the HTTP response, served directly with a 200 OK status code, is expected to describe the ‘thing’ (a school in the case of the example above) using its assigned URI, ie. **../school/100866#id** in the case of this example, as a subject identifier.
+
+Where the fragment identifier pattern is used, the fragment "**id**" shall always imply that the URI identifies a (real-world) "thing".
+
+2. Use a URI without a fragment identifier eg:
+
+**../id/school/100866
+
+** and arrange for a 303 (See Other) response that redirects to a ‘document’ (an information-resource) eg:
+
+**../doc/school/100866
+
+**a distinct resource, that describes the ‘thing’ (school, organisation etc.) using the assigned URI as a subject identifier.
+
+Where the 303-redirect pattern is used for identifying (real-world) "things" as and their associated documents, the **{type} **terms "**id**" and "**doc**" shall be used respectively
 
 The **id** to **doc** redirection pattern has been in common usage on data.gov.uk linked data deployments. However, it suffers from the problem of inducing an extra HTTP round-trip compounded by the network level round-trips involved in setting up the underlying connection. For browser users, following a redirection the URI presented in the address bar is updated to that of the redirection target. In some cases this has led to people incorrectly interpret the URI of a reference-document as being the URI of corresponding reference-item.
 
