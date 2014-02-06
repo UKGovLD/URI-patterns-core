@@ -159,7 +159,7 @@ contributes the multi-segment component
 
 in the corresponding position of the resulting URI. From a URI parsing point-of-view we take such an expression to parse an arbitrary number of path segments into an array valued variable. Given the somewhat general nature of the patterns that follow there are several possible parsings of URI into bindings for any matching URI. However, the patterns presented here as a means to provide some guidance. Actual deployments will make more limiting choices than these somewhat open patterns allow.
 
-`[Editorial Discussion: I’ve stayed close to the spirit of URI templates. However, I don’t know how I’d cleanly present the repeating the repeated interleaving of {concept}/{reference} and {prop}/{value} in a URI template expression so have extended with home grown notation that I don’t think is too alien.  `
+`[Editorial Discussion: I’ve stayed close to the spirit of URI templates. However, I don’t know how I’d cleanly present the repeating the repeated interleaving of {concept}/{key} and {prop}/{value} in a URI template expression so have extended with home grown notation that I don’t think is too alien.  `
 
 `Happy to adapt to something better defined that meets the need.]`
 
@@ -256,11 +256,11 @@ It has become apparent that there are practical problems associated with multipl
 
 Application of this collection based approach extends the primary URI pattern for data.gov.uk sectors from:
 
-`	http://{sector}.data.gov.uk/{type}[/{concept}/{reference}]*`
+`	http://{sector}.data.gov.uk/{type}[/{concept}/{key}]*`
 
 to
 
-`http://{sector}.data.gov.uk{/collection*}{/type}/[/{concept}/{reference}]*`
+`http://{sector}.data.gov.uk{/collection*}{/type}/[/{concept}/{key}]*`
 
 allowing for more ‘structure’ to the left of the now optional **{type}** component.
 
@@ -538,11 +538,11 @@ Where this is not possible and references in data are made using more ‘ephemer
 
 Application of this collection based approach extends the primary URI pattern for data.gov.uk sectors from:
 
-	`http://{sector}.data.gov.uk/{type}[/{concept}/{reference}]*[/{concept}]`
+	`http://{sector}.data.gov.uk/{type}[/{concept}/{key}]*[/{concept}]`
 
 to
 
-`http://{sector}.data.gov.uk{/collection*}{/type}[/{concept}/{reference}]*[/{concept}]`
+`http://{sector}.data.gov.uk{/collection*}{/type}[/{concept}/{key}]*[/{concept}]`
 
 allowing for more ‘structure’ to the left of the now optional {type} component.
 
