@@ -199,12 +199,12 @@ The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0"
 
 where
 
-* `{domain}`<br />
+* **`{domain}`**<br />
 is an internet DNS domain name. Administratively and operationally this delegates authority over the subordinate URI space to the organisational entity with administrative rights for the domain.<br /><br />
-A `{domain}` authority may create subdomains of the form **{subdomain}.{domain}** as a means of creating a delegated URI space. The governance of a subdomain may fall within scope of the authority for the parent domain; or it may be delegated to a subordinate governance authority
+A **`{domain}`** authority may create subdomains of the form **`{subdomain}.{domain}`** as a means of creating a delegated URI space. The governance of a subdomain may fall within scope of the authority for the parent domain; or it may be delegated to a subordinate governance authority
 
-* `{/collection*}`<br />
-is a short sequence of URI path segments, typically one or two, that serve as a delegation point for administrative authority over the delegated URI space. These path segments fields, can also be used to affect the top-level routing of corresponding request to infrastructure. Path segments in `{/collection*}` should avoid literal values commonly used by the `{type}` component, specifically `'def'`, `'id'`, `'doc'`, `'data'` and `'so'`. This avoids a path segment within `{/collection*}` being confused with a `{type}` component (if present). 
+* **`{/collection*}`**<br />
+is a short sequence of URI path segments, typically one or two, that serve as a delegation point for administrative authority over the delegated URI space. These path segments fields, can also be used to affect the top-level routing of corresponding request to infrastructure. Path segments in **`{/collection*}`** should avoid literal values commonly used by the **`{type}`** component, specifically **`'def'`**, **`'id'`**, **`'doc'`**, **`'data'`** and **`'so'`**. This avoids a path segment within **`{/collection*}`** being confused with a **`{type}`** component (if present). 
 
 ### 
 
