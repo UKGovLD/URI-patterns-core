@@ -114,20 +114,26 @@ See the relevant specifications for a more detailed treatment of the structure o
 
 In patterns presented in this document, we do not make use of the optional query component, but do not prohibit its use where required to support specific applications.
 
-`[Editorial Discussion: There is a developing trend to start using HTTPS URI for service endpoints. The domain naming guidance for services.gov.uk https://www.gov.uk/service-manual/operations/operating-servicegovuk-subdomains.html mandates the use of HTTPS URIs because the provide a means of private exchange and for a client to authenticate a server. We are not yet aware of widespread use of HTTPS URI, and haven’t studied the impact on caching behaviours. This is something we need to think about as we take forward implementation.]`
+```
+[Editorial Discussion: There is a developing trend to start using HTTPS URI for 
+service endpoints. The domain naming guidance for services.gov.uk at:
+
+https://www.gov.uk/service-manual/operations/operating-servicegovuk-subdomains.html 
+
+mandates the use of HTTPS URIs because the provide a means of private exchange 
+and for a client to authenticate a server. We are not yet aware of widespread use 
+of HTTPS URI, and haven’t studied the impact on caching behaviours. This is something
+we need to think about as we take forward implementation.]
+```
 
 ## Collections
 
 Conceptually we organise the URI space within a domain (an internet DNS name) as a hierarchy of collections. It is generally expected that such hierarchies will be flat or very shallow (1-2 path segments deep).
 
- 
-
 A collection is a cohesive grouping of :
 
 * URI sets, (reference items and reference data)
-
 * datasets and 
-
 * vocabularies 
 
 that can be viewed as a coarse grain unit of publication and attribution as well as for the purposes of routing requests toward supporting infrastructure. 
