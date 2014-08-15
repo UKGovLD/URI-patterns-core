@@ -438,9 +438,8 @@ TBD
 <a name="reference.URISetsV1"/>[1] "Designing URI Sets for the UK Public Sector",  
   [https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector)
 
-<a name="reference.PersistentURI"/>[2]	"Study on persistent URIs, with identification of best practices and recommendations on the topic for the MSs and the EC"  
-  Interoperability Soultions for European Union Adminstrations (ISA) Deliverable D7.1.3
-[https://joinup.ec.europa.eu/sites/default/files/c0/7d/10/D7.1.3 - Study on persistent URIs.pdf](https://joinup.ec.europa.eu/sites/default/files/c0/7d/10/D7.1.3%20-%20Study%20on%20persistent%20URIs.pdf)
+<a name="reference.PersistentURI"/>[2]	"Study on persistent URIs, with identification of best practices and recommendations on the topic for the MSs and the EC", Interoperability Soultions for European Union Adminstrations (ISA) Deliverable D7.1.3  
+  [https://joinup.ec.europa.eu/sites/default/files/c0/7d/10/D7.1.3 - Study on persistent URIs.pdf](https://joinup.ec.europa.eu/sites/default/files/c0/7d/10/D7.1.3%20-%20Study%20on%20persistent%20URIs.pdf)
 
 <a name="reference.UKGovLDRegistry"/>[3]	"UKGovLD Registry",  [https://github.com/der/ukl-registry-poc/wiki](https://github.com/der/ukl-registry-poc/wiki) 
 
