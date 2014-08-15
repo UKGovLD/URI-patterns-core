@@ -355,7 +355,7 @@ In order to enable some eventual retirement of a URI Set, Dataset or Vocabulary,
 * the extent of the period for which ‘old’ URI will respond with 301/302/307 redirections and ‘new’ URI.
 * when the ‘old’ URI will cease to respond at all.
 
-**`[Note to Alex/@UKGovLD: Separate guidance needs to be developed along with *concrete* vocabulary recommendations.**]` 
+**`[Note to Alex/@UKGovLD: Separate guidance needs to be developed along with *concrete* vocabulary recommendations.]`**
 
 ## Avoiding Changes in URI Space
 
@@ -382,7 +382,7 @@ To avoid clashes with URI assignments under v1.0 URI patterns and these revised 
 
 An alternative to the current {sector}.data.gov.uk pattern would be to use a collection based approach where:
 
-**`http://data.gov.uk/{collection}/(.*)`**
+**`http://data.gov.uk/{/collection*}/(.*)`**
 
 acts as the root of a persistent URL service for public sector data publishing - that proxies requests through to infrastructure provided by the current custodian of a given collection.
 
@@ -392,9 +392,9 @@ acts as the root of a persistent URL service for public sector data publishing -
 
 UK devolved administrations operated under the following top-level domains.
 
-* Wales			wales.gov.uk
-* Scotland		scotland.gov.uk
-* Northern Ireland		northernireland.gov.uk
+* Wales                 `wales.gov.uk`
+* Scotland              `scotland.gov.uk`
+* Northern Ireland      `northernireland.gov.uk`
 
 These top-level domain names are consider to be persistent and unlikely to change in the foreseeable future.
 
@@ -598,13 +598,12 @@ When assigning URI for things that are not themselves data or documents, things 
 
 There are two commonly used patterns for assigning URI  to such ‘non-information’ resources.
 
-1. Use a URI with a fragment identifier eg:
-
-**../school/100866#id
-
-**The natural fragment stripping action of the HTTP protocol means that the HTTP retrieval request will be made using the URI stripped of its fragment. The content of the HTTP response, served directly with a 200 OK status code, is expected to describe the ‘thing’ (a school in the case of the example above) using its assigned URI, ie. **../school/100866#id** in the case of this example, as a subject identifier.
-
-Where the fragment identifier pattern is used, the fragment "**id**" shall always imply that the URI identifies a (real-world) "thing".
+1. Use a URI with a fragment identifier eg:<br />
+**'../school/100866#id'**  
+  
+The natural fragment stripping action of the HTTP protocol means that the HTTP retrieval request will be made using the URI stripped of its fragment. The content of the HTTP response, served directly with a 200 OK status code, is expected to describe the ‘thing’ (a school in the case of the example above) using its assigned URI, ie. **`../school/100866#id`** in the case of this example, as a subject identifier.  
+  
+Where the fragment identifier pattern is used, the fragment "**`id`**" shall always imply that the URI identifies a (real-world) "thing".
 
 2. Use a URI without a fragment identifier eg:
 
