@@ -78,7 +78,7 @@ Unlike URI Sets, which exist to create common points of reference, Datasets make
 
 # URI Spaces and Collections
 
-Linked data publishing makes extensive use of [HTTP URI](#HTTP-URI) as identifiers for all manner of things: important reference items such as schools, hospitals, roads, stations, legislation, people, places, events - often collectively referred to as ‘things’. The basic ‘contract’ of linked data is that a URI used as an identifier in this way can be simply ‘looked-up’ on the web to find information about the ‘thing’ referenced by that URI.
+Linked data publishing makes extensive use of [HTTP URI](#http-uri) as identifiers for all manner of things: important reference items such as schools, hospitals, roads, stations, legislation, people, places, events - often collectively referred to as ‘things’. The basic ‘contract’ of linked data is that a URI used as an identifier in this way can be simply ‘looked-up’ on the web to find information about the ‘thing’ referenced by that URI.
 
 The space of http URIs is huge and a linked data publisher needs to consider to how they are going to use a portion of  http URI space, to support their linked data publication. There are two perspectives to consider:
 
@@ -98,7 +98,7 @@ Nevertheless, it is the URI as a whole which comprises the unique identifier.
 
 The syntactic structure of URI in general is defined in [RFC3986](http://www.ietf.org/rfc/rfc3986.txt) and HTTP URI in particular in [RFC2616](http://www.ietf.org/rfc/rfc2616.txt) and in simplified form may be presented as:
 
-   **'http://{authority}[/{segment}]*[?{query}][#{frag}]'**
+**'http://{authority}[/{segment}]*[?{query}][#{frag}]'**
 
 where:
 
