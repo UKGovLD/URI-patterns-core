@@ -249,14 +249,10 @@ Initially **`data.gov.uk`** linked data publishing was organised around the use 
 
 It has become apparent that there are practical problems associated with multiple publishers making interleaved use of a URI space directly underneath the root of a single domain. In order to avoid the need for fine grained redirection or proxy mappings, this revised guidance introduces the notion of [collections](#heading=h.1t3h5sf) as a cohesive grouping of URI sets, vocabularies and datasets that are effectively administered as a group. Redirections or proxy mapping can then be organised on a more coarse grained basis, and reorganised should publishing responsibility for a collection change as a result of organisational change.
 
-Application of this collection based approach extends the primary URI pattern for data.gov.uk sectors from:
-
-**`	http://{sector}.data.gov.uk/{type}[/{concept}/{key}]*`**
-
-to
-
-**`http://{sector}.data.gov.uk{/collection*}{/type}/[/{concept}/{key}]*`**
-
+Application of this collection based approach extends the primary URI pattern for data.gov.uk sectors from:<br />
+**`	http://{sector}.data.gov.uk/{type}[/{concept}/{key}]*`**<br />
+to<br />
+**`http://{sector}.data.gov.uk{/collection*}{/type}/[/{concept}/{key}]*`**</br >
 allowing for more ‘structure’ to the left of the now optional **`{type}`** component.
 
 To avoid clashes with URI assignments made under v1.0 URI patterns and these revised patterns, the segments of the **`{/collection*}`** component may NOT use literal values commonly used by the **`{type}`** component, specifcally **`'def`'**, **`'id'`**, **`'doc'`**, **`'data'`** and **`'so'`**.
