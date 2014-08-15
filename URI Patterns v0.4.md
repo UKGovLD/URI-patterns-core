@@ -41,17 +41,17 @@ A URI Set, defined as:
 
 A URI Set is usually comprised of:
 
-* a *[URI Set URI](#bookmark=id.1951n8qjx241)* to name the set and which can be used to 
+* a *[_URI Set URI_](#bookmark=id.1951n8qjx241)* to name the set and which can be used to 
     * associated metadata to describe the set’s:
         * spatial, temporal and thematic coverage; 
         * provenance and data-quality
     * optionally list the reference items that are members of the URI set.
 
-* an** ***[Identifier UR*I](#bookmark=id.7tcuws422kuj)* *for each reference item within the URI Set (e.g. schools, stations, hospitals, monitoring points...)
+* an *[_Identifier URI_](#bookmark=id.7tcuws422kuj)* for each reference item within the URI Set (e.g. schools, stations, hospitals, monitoring points...)
 
-* *reference data *describing each reference item
+* _reference data_ describing each reference item
 
-* optionally, one or more *[Vocabulary U*R](#bookmark=id.xcn3zs6pru85)*[*I](#bookmark=id.xcn3zs6pru85) for vocabularies, ontologies, concept schemes or codelist used in the description of reference items.
+* optionally, one or more *[_Vocabulary URI_](#bookmark=id.xcn3zs6pru85)* for vocabularies, ontologies, concept schemes or codelist used in the description of reference items.
 
 ### Vocabularies
 
