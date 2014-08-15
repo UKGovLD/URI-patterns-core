@@ -252,7 +252,7 @@ It has become apparent that there are practical problems associated with multipl
 Application of this collection based approach extends the primary URI pattern for data.gov.uk sectors from:<br />
 **`	http://{sector}.data.gov.uk/{type}[/{concept}/{key}]*`**<br />
 to<br />
-**`http://{sector}.data.gov.uk{/collection*}{/type}/[/{concept}/{key}]*`**</br >
+**`http://{sector}.data.gov.uk{/collection*}{/type}/[/{concept}/{key}]*`**<br />
 allowing for more ‘structure’ to the left of the now optional **`{type}`** component.
 
 To avoid clashes with URI assignments made under v1.0 URI patterns and these revised patterns, the segments of the **`{/collection*}`** component may NOT use literal values commonly used by the **`{type}`** component, specifcally **`'def`'**, **`'id'`**, **`'doc'`**, **`'data'`** and **`'so'`**.
@@ -280,6 +280,10 @@ Domain, including subdomain, and collection names should be aligned with key and
 ## Right Hand Patterns
 
 Note that the example URI in the table below are for illustrative purposes. Most of the "Version 1.0" examples do access live linked-data with the particular exception of URI ending in a “#fragment”. At the time of writing all the “**With  {/collection*}**” examples are illustrative only.
+
+|   | **Pattern** | **Example URI ** |
+|:--|:------------|:-----------------|
+|**URI Set URI**|**`{prefix}/id/{concept}`** or <br />**`{prefix}/{concept}#id`**|Version 1.0 examples<br />http://education.data.gov.uk/id/school<br />http://transport.data.gov.uk/id/road<br />http://transport.data.gov.uk/road#id<br /><br />With {/collection*}<br />http://environment.data.gov.uk/bathing-water-quality/id/bathing-water<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district<br />http://environment.data.gov.uk/catchment-management/id/waterbody</td> |
 
 <table>
   <tr>
