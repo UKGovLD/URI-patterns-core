@@ -284,16 +284,7 @@ Note that the example URI in the table below are for illustrative purposes. Most
 |   | **Pattern** | **Example URI** |
 |:--|:------------|:-----------------|
 |**URI Set URI**|**`{prefix}/id/{concept}`** or <br />**`{prefix}/{concept}#id`**| **Version 1.0 examples**<br />http://education.data.gov.uk/id/school<br />http://transport.data.gov.uk/id/road<br />http://transport.data.gov.uk/road#id<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/id/bathing-water<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district<br />http://environment.data.gov.uk/catchment-management/id/waterbody</td> |
-| **Identifier URI**<br />(for reference items) | **`{prefix}/id[/{concept}/{key}]*`** or<br />**`{prefix}[/{concept}/{key}]*#id`** | **Version 1.0 examples**<br />
-http://transport.data.gov.uk/id/station/BPW<br />
-http://transport.data.gov.uk/station/BPW#id<br />
-<br />
-http://transport.data.gov.uk/road/M5#id<br />
-http://transport.data.gov.uk/road/M5/junction/24#id<br />
-<br />
-**With {/collection*}**<br />
-http://environment.data.gov.uk/catchment-management/id/river-basin-district/8<br />
-http://environment.data.gov.uk/catchment-management/id/waterbody/GB108050014050 |
+| **Identifier URI**<br />(for reference items) | **`{prefix}/id[/{concept}/{key}]*`** or<br />**`{prefix}[/{concept}/{key}]*#id`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/id/station/BPW<br />http://transport.data.gov.uk/station/BPW#id<br /><br />http://transport.data.gov.uk/road/M5#id<br />http://transport.data.gov.uk/road/M5/junction/24#id<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district/8<br />http://environment.data.gov.uk/catchment-management/id/waterbody/GB108050014050 |
 
 <table>
   <tr>
