@@ -101,7 +101,7 @@ Nevertheless, it is the URI as a whole which comprises the unique identifier.
 
 The syntactic structure of URI in general is defined in [RFC3986](http://www.ietf.org/rfc/rfc3986.txt) and HTTP URI in particular in [RFC2616](http://www.ietf.org/rfc/rfc2616.txt) and in simplified form may be presented as:
 
-    http://{authority}[/{segment}]*[?{query}][#{frag}]
+   **'http://{authority}[/{segment}]*[?{query}][#{frag}]'**
 
 where:
 
@@ -206,19 +206,19 @@ A **`{domain}`** authority may create subdomains of the form **`{subdomain}.{dom
 * **`{/collection*}`**<br />
 is a short sequence of URI path segments, typically one or two, that serve as a delegation point for administrative authority over the delegated URI space. These path segments fields, can also be used to affect the top-level routing of corresponding request to infrastructure. Path segments in **`{/collection*}`** should avoid literal values commonly used by the **`{type}`** component, specifically **`'def'`**, **`'id'`**, **`'doc'`**, **`'data'`** and **`'so'`**. This avoids a path segment within **`{/collection*}`** being confused with a **`{type}`** component (if present). 
 
-### 
-
-
 ### Choosing Domain and Collection Names
 
-`[Editorial Note: The content of this section was (at least initially) lifted and adapted from the corresponding section of "Designing URI Sets for the UK public sector - v2.0d" ]`
+```
+[Editorial Note: The content of this section was (at least initially) 
+ lifted and adapted from the corresponding section of "Designing URI Sets 
+ for the UK public sector - v2.0d" ]
+```
 
 **_General_**
 
 When considering the name of a domain and collection in which to to root a URI Set, Dataset  or Vocabulary…
 
 * the publisher will require content control of the sub-domain and URI path that it ultimately resolves to
-
 * the domain will have appropriate service-levels and scalability for resilience and performance
 
 **_Requirements for URI sets that are promoted for re-use._**
@@ -226,74 +226,59 @@ When considering the name of a domain and collection in which to to root a URI S
 In addition, where a URI Sets and Vocabularies that are promoted for re-use, the following considerations apply to find a balance for central and federated components.
 
 * flexibility & readability;
-
 * administrative burden;
-
 * infrastructure costs.
 
-In particular, the combination of **{domain} **and **{/collection*}** will …
+In particular, the combination of **`{domain}`** and **`{/collection*}`** will …
 
 * be expected to be maintained over the long term;
-
 * not contain the name of the department or agency currently defining and naming a concept, as that may be
 re-assigned (NOTE: Whilst this is generally accepted as a best practice, there are situations where implicit trust or confidence in a data publication is vested in organisational identity as manifest in the domain name of a URI. Typically this will occur where there is some level of long-term brand capital accrued by an organisational entity. However, early consideration should still be given to the likelihood of future identity change leading to pressures to change published URI and to transition arrangements should such a change actually occur.).
-
 * support a direct response, or redirect or proxy to servers provided by the publishing authority;
-
 * ensure that identifiers with a URI space do not collide;
-
 * require the minimum of central administration and infrastructure costs;
-
 * be scalable for throughput, performance, resilience.
 
- 
+The choice of **`{domain}`** should provide the confidence to the consumer, that the URI set has met minimum quality criteria, including implementing these design considerations.  In other words, the domain itself should convey an assurance of quality and longevity.
 
-The choice of **{domain}** should provide the confidence to the consumer, that the URI set has met minimum quality criteria, including implementing these design considerations.  In other words, the domain itself should convey an assurance of quality and longevity.
+Initially **`data.gov.uk`** linked data publishing was organised around the use of sectored subdomains of **`data.gov.uk`**of the form:
 
-Initially **data.gov.uk **linked data publishing was organised around the use of sectored subdomains of **data.gov.uk **of the form:
+   **`{domain} = {sector}.data.gov.uk`**
 
-	`{domain} = {sector}.data.gov.uk`
+[Annex I](#heading=h.49x2ik5) provides an inventory of **`data.gov.uk`** sectors in use and the lead departments providing sector governance where known.
 
-[Annex I](#heading=h.49x2ik5)[ ](#heading=h.49x2ik5)provides an inventory of data.gov.uk sectors in use and the lead departments providing sector governance where known.
-
-It has become apparent that there are practical problems associated with multiple publishers making interleaved use of a URI space directly underneath the root of a single domain. In order to avoid the need for fine grained redirection or proxy mappings, this revised guidance introduces the notion of [collections ](#heading=h.1t3h5sf)[a](#heading=h.1t3h5sf)s a cohesive grouping of URI sets, vocabularies and datasets that are effectively administered as a group. Redirections or proxy mapping can then be organised on a more coarse grained basis, and reorganised should publishing responsibility for a collection change as a result of organisational change.
+It has become apparent that there are practical problems associated with multiple publishers making interleaved use of a URI space directly underneath the root of a single domain. In order to avoid the need for fine grained redirection or proxy mappings, this revised guidance introduces the notion of [collections](#heading=h.1t3h5sf) as a cohesive grouping of URI sets, vocabularies and datasets that are effectively administered as a group. Redirections or proxy mapping can then be organised on a more coarse grained basis, and reorganised should publishing responsibility for a collection change as a result of organisational change.
 
 Application of this collection based approach extends the primary URI pattern for data.gov.uk sectors from:
 
-`	http://{sector}.data.gov.uk/{type}[/{concept}/{key}]*`
+**`	http://{sector}.data.gov.uk/{type}[/{concept}/{key}]*`**
 
 to
 
-`http://{sector}.data.gov.uk{/collection*}{/type}/[/{concept}/{key}]*`
+**`http://{sector}.data.gov.uk{/collection*}{/type}/[/{concept}/{key}]*`**
 
-allowing for more ‘structure’ to the left of the now optional **{type}** component.
+allowing for more ‘structure’ to the left of the now optional **`{type}`** component.
 
-To avoid clashes with URI assignments made under  v1.0 URI patterns and these revised patterns, the segments of the **{/collection*}** component may NOT use literal values commonly used by the **{type} **component, specifcally "**def**" “**id**”, “**doc**”, “**data**” and “**so**”
+To avoid clashes with URI assignments made under v1.0 URI patterns and these revised patterns, the segments of the **`{/collection*}`** component may NOT use literal values commonly used by the **`{type}`** component, specifcally **`'def`'**, **`'id'`**, **`'doc'`**, **`'data'`** and **`'so'`**.
 
 When looking up a URI, the servers either provide a direct response themselves or use HTTP proxying or redirection techniques to route enquiries to the appropriate department or agency server.  
 
 Publishing responsibility for URI Sets, Datasets and Vocabularies can be delegated at subdomain (inc. sector), collection and/or concept levels depending on the administrative  and operational needs of a particular domain. 
 
-Domain, including subdomain, and collection names should be aligned with key and **invariant **facets of the data publication such as the function of government that it serves. In particular, as far as is possible, they should **NOT **be aligned with internal organisational structure such as department name.  They should be understandable by the public, rather than reflecting how government is organisatised.
-
+Domain, including subdomain, and collection names should be aligned with key and **invariant** facets of the data publication such as the function of government that it serves. In particular, as far as is possible, they should **NOT** be aligned with internal organisational structure such as department name.  They should be understandable by the public, rather than reflecting how government is organised.
 
 **Single segment collection names:**
 
 * http://environment.data.gov.uk/catchment-management
-
 * http://environment.data.gov.uk/bathing-water-quality
 
 
 **Multiple segment collection names:**
 
 * http://data.scotland.gov.uk/environment/bathing-water-quality
-
 * http://data.gov.uk/public-transport/rail
-
 * http://data.gov.uk/public-transport/road 
-
 * http://data.gov.uk/public-transport/air
-
 * http://data.gov.uk/public-transport/water
 
 ## Right Hand Patterns
