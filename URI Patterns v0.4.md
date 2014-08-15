@@ -195,7 +195,6 @@ is a short sequence of URI path segments, typically one or two, that serve as a 
 ### Choosing Domain and Collection Names
 
 [**`Editorial Note:`** `The content of this section was (at least initially) lifted and adapted from the corresponding section of "Designing URI Sets for the UK public sector - v2.0d"`]
-```
 
 **_General_**
 
