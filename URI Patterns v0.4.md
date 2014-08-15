@@ -41,33 +41,33 @@ A URI Set, defined as:
 
 A URI Set is usually comprised of:
 
-* a **[_URI Set URI_](#bookmark=id.1951n8qjx241)** to name the set and which can be used to 
+* a **[_URI Set URI_](#bm.URISetURI)** to name the set and which can be used to 
     * associated metadata to describe the set’s:
         * spatial, temporal and thematic coverage; 
         * provenance and data-quality
     * optionally list the reference items that are members of the URI set.
 
-* an **[_Identifier URI_](#bookmark=id.7tcuws422kuj)** for each reference item within the URI Set (e.g. schools, stations, hospitals, monitoring points...)
+* an **[_Identifier URI_](#bm.idURI)** for each reference item within the URI Set (e.g. schools, stations, hospitals, monitoring points...)
 
 * _reference data_ describing each reference item
 
-* optionally, one or more **[_Vocabulary URI_](#bookmark=id.xcn3zs6pru85)** for vocabularies, ontologies, concept schemes or codelist used in the description of reference items.
+* optionally, one or more **[_Vocabulary URI_](#bm.vocabURI)** for vocabularies, ontologies, concept schemes or codelist used in the description of reference items.
 
 ### Vocabularies
 
-In order to describe a [reference item](#bookmark=id.8sukpqqnotxw) or a data item it may be necessary to develop and publish one or more groupings of related terms (an ontology, a vocabulary, concept scheme and/or codelists) that can be used to facilitate such a description. These terms and their containing vocabularies are named with [Vocabulary URI](#bookmark=id.xcn3zs6pru85).
+In order to describe a [reference item](#term.referenceItem) or a data item it may be necessary to develop and publish one or more groupings of related terms (an ontology, a vocabulary, concept scheme and/or codelists) that can be used to facilitate such a description. These terms and their containing vocabularies are named with [Vocabulary URI](#bm.vocabURI).
 
 By preference, data publishers should avoid creating new vocabularies and make use of widely used pre-existing vocabularies provided that they are sufficiently expressive to describe the reference items in the URI Set being published.
 
 ### Datasets
 
-One of the main reasons for publishing [reference data](#bookmark=id.9252hexrmngw) as URI Sets is to create common points of reference for data published as Datasets by others. Whereas a 'URI Set' contains reference data, a Dataset contains transactional data that links to reference items using URIs from the relevant 'URI Set'
+One of the main reasons for publishing [reference data](#term.referenceData) as URI Sets is to create common points of reference for data published as Datasets by others. Whereas a 'URI Set' contains reference data, a Dataset contains transactional data that links to reference items using URIs from the relevant 'URI Set'
 
 In order to publish information about bathing-water quality there is a need to be able to refer to the bathing-waters whose water quality is being reported; to publish traffic-count statistics, there is a need to be able to refer to traffic-count points where counts are taken; to publish education statistics a need to be able to refer to educational establishments and so forth. URI Sets of bathing-waters, traffic-count points and educational establishments provide these points of common reference.. 
 
 Some URI sets are more widely re-usable than others. They act as the connections points between the Datasets that use them. For example the administrative geographies of the UK published by both the Ordnance Survey and the Office of National Statistics are use by many financial, statistical or observational Datasets that have at least one statistical dimension aligned with the corresponding administrative geography.
 
-Thus a requirement to publish a Dataset  (financial, observational, statistical...) may creates a need for reference data about previously unpublished [reference items](#bookmark=id.8sukpqqnotxw) related to the Dataset being published. This in turn creates a need for vocabularies to describe those reference items as well as the data items within the Dataset being published.
+Thus a requirement to publish a Dataset  (financial, observational, statistical...) may creates a need for reference data about previously unpublished [reference items](#term.referenceItem) related to the Dataset being published. This in turn creates a need for vocabularies to describe those reference items as well as the data items within the Dataset being published.
 
 Ideally, most reference items that a data publisher needs will already have been published as URI sets by someone else. However, there will be cases where a data publisher needs to create URI sets for reference items that are naturally within their own span of control - ie. where they are the natural source of authoritative reference data for that particular kind of reference item. For example, in order  publish a series of regularly updated weather forecasts as linked data, the Met Office may also needs to act as the authority for a URI Set of locations referenced by those forecasts.
 
@@ -78,7 +78,7 @@ Unlike URI Sets, which exist to create common points of reference, Datasets make
 
 # URI Spaces and Collections
 
-Linked data publishing makes extensive use of [HTTP URI](#bookmark=id.in2hhs5y1nv1) as identifiers for all manner of things: important reference items such as schools, hospitals, roads, stations, legislation, people, places, events - often collectively referred to as ‘things’. The basic ‘contract’ of linked data is that a URI used as an identifier in this way can be simply ‘looked-up’ on the web to find information about the ‘thing’ referenced by that URI.
+Linked data publishing makes extensive use of [HTTP URI](#HTTP-URI) as identifiers for all manner of things: important reference items such as schools, hospitals, roads, stations, legislation, people, places, events - often collectively referred to as ‘things’. The basic ‘contract’ of linked data is that a URI used as an identifier in this way can be simply ‘looked-up’ on the web to find information about the ‘thing’ referenced by that URI.
 
 The space of http URIs is huge and a linked data publisher needs to consider to how they are going to use a portion of  http URI space, to support their linked data publication. There are two perspectives to consider:
 
@@ -176,7 +176,7 @@ The URI patterns are presented in two parts:
     * for datasets and data items where **`{type}=’data’`**<br />
     **`[/{type}]{/dataset*}[/{concept}/{key}]*[/{prop}]`**
 
-The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0" [[1]](#heading=h.qsh70q) are a subset of those in the this section. In particular they omit the **`{/collection*}`** components and do not include a **`{type}`** of **`‘data’`** introduced here for datasets and data items.
+The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0" [[1]](#reference.URISetsV1) are a subset of those in the this section. In particular they omit the **`{/collection*}`** components and do not include a **`{type}`** of **`‘data’`** introduced here for datasets and data items.
 
 ## Left Hand Patterns
 ### General Pattern:
@@ -227,9 +227,9 @@ Initially **`data.gov.uk`** linked data publishing was organised around the use 
 
    **`{domain} = {sector}.data.gov.uk`**
 
-[Annex I](#heading=h.49x2ik5) provides an inventory of **`data.gov.uk`** sectors in use and the lead departments providing sector governance where known.
+[Annex I](#annex-i-datagovuk-active-sector-inventory) provides an inventory of **`data.gov.uk`** sectors in use and the lead departments providing sector governance where known.
 
-It has become apparent that there are practical problems associated with multiple publishers making interleaved use of a URI space directly underneath the root of a single domain. In order to avoid the need for fine grained redirection or proxy mappings, this revised guidance introduces the notion of [collections](#heading=h.1t3h5sf) as a cohesive grouping of URI sets, vocabularies and datasets that are effectively administered as a group. Redirections or proxy mapping can then be organised on a more coarse grained basis, and reorganised should publishing responsibility for a collection change as a result of organisational change.
+It has become apparent that there are practical problems associated with multiple publishers making interleaved use of a URI space directly underneath the root of a single domain. In order to avoid the need for fine grained redirection or proxy mappings, this revised guidance introduces the notion of [collections](#collections) as a cohesive grouping of URI sets, vocabularies and datasets that are effectively administered as a group. Redirections or proxy mapping can then be organised on a more coarse grained basis, and reorganised should publishing responsibility for a collection change as a result of organisational change.
 
 Application of this collection based approach extends the primary URI pattern for data.gov.uk sectors from:<br />
 **`	http://{sector}.data.gov.uk/{type}[/{concept}/{key}]*`**<br />
@@ -265,18 +265,18 @@ Note that the example URI in the table below are for illustrative purposes. Most
 
 |   | **Pattern** | **Example URI** |
 |:--|:------------|:-----------------|
-|**URI Set URI**|**`{prefix}/id/{concept}`** or <br />**`{prefix}/{concept}#id`**| **Version 1.0 examples**<br />http://education.data.gov.uk/id/school<br />http://transport.data.gov.uk/id/road<br />http://transport.data.gov.uk/road#id<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/id/bathing-water<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district<br />http://environment.data.gov.uk/catchment-management/id/waterbody</td> |
-| **Identifier URI**<br />(for reference items) | **`{prefix}/id[/{concept}/{key}]*`** or<br />**`{prefix}[/{concept}/{key}]*#id`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/id/station/BPW<br />http://transport.data.gov.uk/station/BPW#id<br /><br />http://transport.data.gov.uk/road/M5#id<br />http://transport.data.gov.uk/road/M5/junction/24#id<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district/8<br />http://environment.data.gov.uk/catchment-management/id/waterbody/GB108050014050 |
-| **Document URI**<br />(for reference data) | reference data for single reference items:<br />**`{prefix}/doc[/{concept}/{key}]*`** or <br />**`{prefix}[/{concept}/{key}]*`**<br /><br />optionally, reference data for lists of reference items<br />**`{prefix}/doc/{concept}/{key}]*/{concept}`** or <br />**`{prefix}[/{concept}/{key}]*/{concept}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/doc/station/BPW<br />http://transport.data.gov.uk/station/BPW<br /><br />http://transport.data.gov.uk/road/M5<br />http://transport.data.gov.uk/road/M5/junction/24<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/doc/river-basin-district/8<br />http://environment.data.gov.uk/catchment-management/doc/waterbody/GB108050014050 |
-| **Vocabulary URI**<br />(for vocabularies, ontologies, concept schemes, codelists and schema) | **`{prefix}/def{/vocabulary*}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/def/traffic<br />http://environment.data.gov.uk/def/bathing-water<br />http://transport.data.gov.uk/def/vehicle<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/def/bathing-water<br />http://environment.data.gov.uk/bathing-water-quality/def/assessment<br />http://environment.data.gov.uk/catchment-management/def/waterbody-classification |
-| **Vocabulary Term URI**<br />(for term definitions within a vocabularies, ontologies, concept schemes, codelists and schema) | **`{prefix}/def{/vocabulary*}/{term}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/def/traffic/Road<br />http://environment.data.gov.uk/def/bathing-water/CoastalBathingWater<br />http://transport.data.gov.uk/def/vehicle#hgv<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/def/bathing-water/CoastalBathingWater<br />http://environment.data.gov.uk/bathing-water-quality/def/assessment/ComplianceAssessment<br />http://environment.data.gov.uk/catchment-management/def/classification/classifcationYear |
-| **Dataset URI**<br />(for datasets) | **`{prefix}/data{/dataset*}`** | **Version 1.0 examples**<br />http://environment.data.gov.uk/data/bathing-water-quality<br />http://environment.data.gov.uk/data/bathing-water-quality/compliance<br />http://environment.data.gov.uk/data/waterbody/classification<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/data/compliance-assessment<br />http://environment.data.gov.uk/bathing-water-quality/data/sample-assessment<br />http://environment.data.gov.uk/catchment-management/data/classification-predicted-outcome<br />http://environment.data.gov.uk/catchment-management/data/classification-objective-outcome |
-| **Data Item URI**<br />(for data items within datasets) | **`{prefix}/data{/dataset*}[/{concept}/{key}]*`** | **Version 1.0 examples**<br />http://environment.data.gov.uk/data/bathing-water-quality/compliance/point/03600/year/2012<br />http://environment.data.gov.uk/data/waterbody/classification/waterbody/GB109055042060/year/2009/item/wbc_55<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/data/compliance-assessment/point/03600/year/2012<br />http://environment.data.gov.uk/catchment-management/data/classification/waterbody/GB109055042060/year/2009/item/wbc_55 |
+| <a name="bm.URISetURI"/>**URI Set URI**|**`{prefix}/id/{concept}`** or <br />**`{prefix}/{concept}#id`**| **Version 1.0 examples**<br />http://education.data.gov.uk/id/school<br />http://transport.data.gov.uk/id/road<br />http://transport.data.gov.uk/road#id<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/id/bathing-water<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district<br />http://environment.data.gov.uk/catchment-management/id/waterbody</td> |
+| <a name="bm.idURI"/>**Identifier URI**<br />(for reference items) | **`{prefix}/id[/{concept}/{key}]*`** or<br />**`{prefix}[/{concept}/{key}]*#id`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/id/station/BPW<br />http://transport.data.gov.uk/station/BPW#id<br /><br />http://transport.data.gov.uk/road/M5#id<br />http://transport.data.gov.uk/road/M5/junction/24#id<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district/8<br />http://environment.data.gov.uk/catchment-management/id/waterbody/GB108050014050 |
+| <a name="bm.docURI"/>**Document URI**<br />(for reference data) | reference data for single reference items:<br />**`{prefix}/doc[/{concept}/{key}]*`** or <br />**`{prefix}[/{concept}/{key}]*`**<br /><br />optionally, reference data for lists of reference items<br />**`{prefix}/doc/{concept}/{key}]*/{concept}`** or <br />**`{prefix}[/{concept}/{key}]*/{concept}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/doc/station/BPW<br />http://transport.data.gov.uk/station/BPW<br /><br />http://transport.data.gov.uk/road/M5<br />http://transport.data.gov.uk/road/M5/junction/24<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/doc/river-basin-district/8<br />http://environment.data.gov.uk/catchment-management/doc/waterbody/GB108050014050 |
+| <a name="bm.vocabURI"/>**Vocabulary URI**<br />(for vocabularies, ontologies, concept schemes, codelists and schema) | **`{prefix}/def{/vocabulary*}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/def/traffic<br />http://environment.data.gov.uk/def/bathing-water<br />http://transport.data.gov.uk/def/vehicle<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/def/bathing-water<br />http://environment.data.gov.uk/bathing-water-quality/def/assessment<br />http://environment.data.gov.uk/catchment-management/def/waterbody-classification |
+| <a name="bm.termURI"/>**Vocabulary Term URI**<br />(for term definitions within a vocabularies, ontologies, concept schemes, codelists and schema) | **`{prefix}/def{/vocabulary*}/{term}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/def/traffic/Road<br />http://environment.data.gov.uk/def/bathing-water/CoastalBathingWater<br />http://transport.data.gov.uk/def/vehicle#hgv<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/def/bathing-water/CoastalBathingWater<br />http://environment.data.gov.uk/bathing-water-quality/def/assessment/ComplianceAssessment<br />http://environment.data.gov.uk/catchment-management/def/classification/classifcationYear |
+| <a name="bm.datasetURI"/>**Dataset URI**<br />(for datasets) | **`{prefix}/data{/dataset*}`** | **Version 1.0 examples**<br />http://environment.data.gov.uk/data/bathing-water-quality<br />http://environment.data.gov.uk/data/bathing-water-quality/compliance<br />http://environment.data.gov.uk/data/waterbody/classification<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/data/compliance-assessment<br />http://environment.data.gov.uk/bathing-water-quality/data/sample-assessment<br />http://environment.data.gov.uk/catchment-management/data/classification-predicted-outcome<br />http://environment.data.gov.uk/catchment-management/data/classification-objective-outcome |
+| <a name="bm.dataItemURI"/>**Data Item URI**<br />(for data items within datasets) | **`{prefix}/data{/dataset*}[/{concept}/{key}]*`** | **Version 1.0 examples**<br />http://environment.data.gov.uk/data/bathing-water-quality/compliance/point/03600/year/2012<br />http://environment.data.gov.uk/data/waterbody/classification/waterbody/GB109055042060/year/2009/item/wbc_55<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/data/compliance-assessment/point/03600/year/2012<br />http://environment.data.gov.uk/catchment-management/data/classification/waterbody/GB109055042060/year/2009/item/wbc_55 |
 
 where
 
 * **`{prefix}`**<br /> 
-substitutes for the left-hand side patterns presented in the [preceding section](#heading=h.44sinio).
+substitutes for the left-hand side patterns presented in the [preceding section](#left-hand-patterns).
 
 * **`{type}`**<br />
 is an optional **discriminator** used to discriminate between reference items, reference data and vocabularies that share a common {concept} within a URI set. It may also serves as a weak ‘hint’ (NOTE:  It is helpful if the values used in URI path segments can appeal to human intuitions. However, strictly URI are opaque in the sense that humans (and machines) should not expect to make accurate guesses about what a given URI identifies solely from its spelling. It is better to rely on explicit statements in content (whether narrative or in some formalism). Nevertheless, URI that giving correct intuitions to developers and end-users of the data are useful.) of the kind of thing the URI might refer to.
@@ -305,7 +305,7 @@ repeating field pairs that together identify some entity and related subordinate
 
 # The Publishing Commitment
 
-A consequence of publishing URI Sets with the explicit intention that they serve as common points of reference is that publishers of data who make reference to the members (reference items) of a URI Set (individual schools, hospitals, administrative regions, spending categories etc.) come to depend on both the [Identifier URI](#bookmark=id.7tcuws422kuj) for the reference items and the reference data that is accessible via those URI.
+A consequence of publishing URI Sets with the explicit intention that they serve as common points of reference is that publishers of data who make reference to the members (reference items) of a URI Set (individual schools, hospitals, administrative regions, spending categories etc.) come to depend on both the [Identifier URI](#bm.idURI) for the reference items and the reference data that is accessible via those URI.
 
 Publishing a URI Set is a long-term commitment. The long-term persistence of the resolution mechanism (ie. web dereference) from reference identifiers to reference data is vital in establishing confidence and trust in their use as a point of reference.
 
@@ -328,7 +328,7 @@ Current responsibility for a publication is best indicated through the use of ex
 
 ## Managing Changes in URI Space
 
-Whilst the previous section emphasises the importance of persistent identifiers in public sector URI spaces, the reality is that ‘permanent’ (as in forever) is at best only achievable as a succession of commitments to bounded periods of ‘persistence’. In the long-long term, change is inevitable, and some URI Sets, Datasets or vocabularies, will need to be relocated in [URI Space](#bookmark=id.ighdlypmxthp), or retired. The status and intended permanence of URI Sets, Datasets and their supporting vocabularies is best expressed as metadata associated with the corresponding URI Set, Dataset or vocabulary.
+Whilst the previous section emphasises the importance of persistent identifiers in public sector URI spaces, the reality is that ‘permanent’ (as in forever) is at best only achievable as a succession of commitments to bounded periods of ‘persistence’. In the long-long term, change is inevitable, and some URI Sets, Datasets or vocabularies, will need to be relocated in [URI Space](#uri-spaces-and-collections), or retired. The status and intended permanence of URI Sets, Datasets and their supporting vocabularies is best expressed as metadata associated with the corresponding URI Set, Dataset or vocabulary.
 
 In order to enable some eventual retirement of a URI Set, Dataset or Vocabulary, associated metadata SHOULD indicate the status of the corresponding publication and some explicit indication the longevity of both the publication and its URIs. Ideally this should establish a cycle of renewal such that the withdrawal or transition to a new location is indicated through metadata well in advance of either occurrence. This may involve the use of metadata to indicate:
 
@@ -392,7 +392,7 @@ If **`{sector}`** is used, whether as sub-domain in a DNS name or the leftmost U
 
 There are numerous [UK trading funds](http://en.wikipedia.org/wiki/Trading_fund#United_Kingdom) that have mixed practices with respect to their web presence and branding outside of gov.uk internet domains. Several have at least registered .co.uk and .com variants of their domain names at least as a means of protecting their ‘brand’ identity from domain squatting. Practice is also mixed as to whether visitors to non .gov.uk domains are redirected to a canonical .gov.uk site; the site is effectively cloned at the non .gov.uk domains; or presented with distinct sites reflecting public sector and commercial sector roles.
 
-Trading fund name and hence the domain names where they operate, are likely to be subject to occasional change. In publishing data at URI that incorporate a trading-fund name eg. companieshouse.gov.uk, ordnance-survey.co.uk, metoffice.com and so forth, consideration should be given to how a future change of corporate identity will would affect the URI used in published data. In particular whether and how a transition would be managed (see [Managing Changes in URI Space](#heading=h.3rdcrjn)[)](#heading=h.3rdcrjn). 
+Trading fund name and hence the domain names where they operate, are likely to be subject to occasional change. In publishing data at URI that incorporate a trading-fund name eg. companieshouse.gov.uk, ordnance-survey.co.uk, metoffice.com and so forth, consideration should be given to how a future change of corporate identity will would affect the URI used in published data. In particular whether and how a transition would be managed (see [Managing Changes in URI Space](#managing-changes-in-uri-space)). 
 
 Subject to consideration transition issues arising from organisational and ‘brand’ identity change within trading funds, trading funds are likely to organise their data publication under domains such as:
 
@@ -417,16 +417,16 @@ Local Authorities are relatively long-lived organisations and in general are sta
 
 Internal organisational change is likely to be more frequent that a top-level change of the local-authorities identity brought about by occasional local government reorganisation which generally signalled well(?) in advance by the progress of the legislation necessary to effect such change. Sub-domain and collection naming are subject to the same considerations as other categories of publishers and should avoid alignment with internal organisational structure. 
 
-Identity change brought about by local-government reorganisation can be addressed through the use of explicit metadata indicating the status and intended longevity of any published URI Sets, Datasets or Vocabularies (see [Managing Changes in URI Space](#heading=h.3rdcrjn)). Changes in status or longevity SHOULD be indicated in metadata as early as possible when the legislation effecting the change surfaces.
+Identity change brought about by local-government reorganisation can be addressed through the use of explicit metadata indicating the status and intended longevity of any published URI Sets, Datasets or Vocabularies (see [Managing Changes in URI Space](#managing-changes-in-uri-space)). Changes in status or longevity SHOULD be indicated in metadata as early as possible when the legislation effecting the change surfaces.
 
 # Definitions
 
 <dl>
-<dt>URI Set</dt><dd>	
-	"a collection of reference data published using URIs, about a single concept, governed from a single source." [[1]](#heading=h.qsh70q)</dd>
+<dt><a name="term.URISet"/>URI Set</dt><dd>	
+	"a collection of reference data published using URIs, about a single concept, governed from a single source." [[1]](#reference.URISetsV1)</dd>
 
-<dt>reference data</dt><dd>authoritative data provided as part of a URI Set about particular reference items.</dd>
-<dt>reference item</dt><dd>a significant resource (school, station, hospital, statute or Act of Parliament) that is member of a URI Set and about which some reference data has been provided</dd>
+<dt><a name="term.referenceData"/>reference data</dt><dd>authoritative data provided as part of a URI Set about particular reference items.</dd>
+<dt><a name="term.referenceItem"/>reference item</dt><dd>a significant resource (school, station, hospital, statute or Act of Parliament) that is member of a URI Set and about which some reference data has been provided</dd>
 </dl>
 
 # Acknowledgements
