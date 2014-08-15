@@ -105,10 +105,10 @@ The syntactic structure of URI in general is defined in [RFC3986](http://www.iet
 
 where:
 
-* `{authority}` carries a single internet DNS name
-* `{segment}`   provides for an arbitrary number of path segments 
-* `{query}`     provides for an optional (form) query to be embedded in a URI
-* `{frag}`      provides for an optional fragment identifier.
+* **`{authority}`** carries a single internet DNS name
+* **`{segment}`**   provides for an arbitrary number of path segments 
+* **`{query}`**     provides for an optional (form) query to be embedded in a URI
+* **`{frag}`**      provides for an optional fragment identifier.
 
 See the relevant specifications for a more detailed treatment of the structure of URI and the the character restrictions on their components parts.
 
@@ -151,15 +151,15 @@ Curly braces, ie. ‘`{`‘ and ‘`}`’ are used it introduce template variabl
 
 In RFC6570, a variable expression such as:
 
-    {/collection*}
+   **`{/collection*}`**
 
 when expanded with a variable binding of:
 
-    collection=("seg1",”seg2”,”seg3”) 
+   **`collection=("seg1",”seg2”,”seg3”)`**
 
 contributes the multi-segment component
 
-    "/seg1/seg2/seg3"
+   **`"/seg1/seg2/seg3"`**
 
 in the corresponding position of the resulting URI. From a URI parsing point-of-view we take such an expression to parse an arbitrary number of path segments into an array valued variable. Given the somewhat general nature of the patterns that follow there are several possible parsings of URI into bindings for any matching URI. However, the patterns presented here as a means to provide some guidance. Actual deployments will make more limiting choices than these somewhat open patterns allow.
 ```
@@ -177,25 +177,25 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
 
 The URI patterns are presented in two parts:
 
-* a common left hand part<br />`http://{domain}{/collection*}`
+* a common left hand part<br />**`http://{domain}{/collection*}`**
 
 * a type specific right hand part
 
-    * for URI Sets (reference items and reference data) where `{type}=’id’ or ’doc’`<br />
-    `[/{type}][/{concept}/{key}]*[/{concept}][#id]`
+    * for URI Sets (reference items and reference data) where **`{type}=’id’ or ’doc’`** <br />
+    **`[/{type}][/{concept}/{key}]*[/{concept}][#id]`**
     
-    * for vocabularies and definitions where `{type}=’def’`<br />
-    `[/{type}]{/vocabulary*}[/{term}][#{term}]`
+    * for vocabularies and definitions where **`{type}=’def’`**<br />
+    **`[/{type}]{/vocabulary*}[/{term}][#{term}]`**
     
-    * for datasets and data items where `{type}=’data’`<br />
-    `[/{type}]{/dataset*}[/{concept}/{key}]*[/{prop}]`
+    * for datasets and data items where **`{type}=’data’`**<br />
+    **`[/{type}]{/dataset*}[/{concept}/{key}]*[/{prop}]`**
 
-The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0" [[1]](#heading=h.qsh70q) are a subset of those in the this section. In particular they omit the `{/collection*}` components and do not include a `{type}` of `‘data’` introduced here for datasets and data items.
+The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0" [[1]](#heading=h.qsh70q) are a subset of those in the this section. In particular they omit the **`{/collection*}`** components and do not include a **`{type}`** of **`‘data’`** introduced here for datasets and data items.
 
 ## Left Hand Patterns
 ### General Pattern:
 
-`{prefix} = http://{domain}{/collection*}`
+**`{prefix} = http://{domain}{/collection*}`**
 
 where
 
