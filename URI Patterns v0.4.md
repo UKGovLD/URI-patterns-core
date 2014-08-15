@@ -603,29 +603,26 @@ There are two commonly used patterns for assigning URI  to such ‘non-informati
   
   The natural fragment stripping action of the HTTP protocol means that the HTTP retrieval request will be made using the URI stripped of its fragment. The content of the HTTP response, served directly with a 200 OK status code, is expected to describe the ‘thing’ (a school in the case of the example above) using its assigned URI, ie. **`../school/100866#id`** in the case of this example, as a subject identifier.  
   
-Where the fragment identifier pattern is used, the fragment "**`id`**" shall always imply that the URI identifies a (real-world) "thing".
+  Where the fragment identifier pattern is used, the fragment "**`id`**" shall always imply that the URI identifies a (real-world) "thing".
 
-2. Use a URI without a fragment identifier eg:
+2. Use a URI without a fragment identifier eg:  
+**`../id/school/100866`**  
+  
+  and arrange for a 303 (See Other) response that redirects to a ‘document’ (an information-resource) eg:  
+  **`../doc/school/10086`**  
+  
+  a distinct resource, that describes the ‘thing’ (school, organisation etc.) using the assigned URI as a subject identifier.  
+  
+  Where the 303-redirect pattern is used for identifying (real-world) "things" as and their associated documents, the **`{type}`** terms "**`id`**" and "**`doc`**" shall be used respectively
 
-**../id/school/100866
+The **`id`** to **`doc`** redirection pattern has been in common usage on `data.gov.uk` linked data deployments. However, it suffers from the problem of inducing an extra HTTP round-trip compounded by the network level round-trips involved in setting up the underlying connection. For browser users, following a redirection the URI presented in the address bar is updated to that of the redirection target. In some cases this has led to people incorrectly interpret the URI of a reference-document as being the URI of corresponding reference-item.
 
-** and arrange for a 303 (See Other) response that redirects to a ‘document’ (an information-resource) eg:
+The **`#id`** pattern illustrated above has the advantage of enabling information to be retrieved in a single HTTP round-trip. Note that in the example give we use a trailing **`#id`** with the intention that **`../school/100866`** is a relatively small ‘document’ with a single primary topic, in this case the school in question.
 
-**../doc/school/100866
+In principle we could also use fragment in a different way eg:  
+  **`../school#100866`**
 
-**a distinct resource, that describes the ‘thing’ (school, organisation etc.) using the assigned URI as a subject identifier.
-
-Where the 303-redirect pattern is used for identifying (real-world) "things" as and their associated documents, the **{type} **terms "**id**" and "**doc**" shall be used respectively
-
-The **id** to **doc** redirection pattern has been in common usage on data.gov.uk linked data deployments. However, it suffers from the problem of inducing an extra HTTP round-trip compounded by the network level round-trips involved in setting up the underlying connection. For browser users, following a redirection the URI presented in the address bar is updated to that of the redirection target. In some cases this has led to people incorrectly interpret the URI of a reference-document as being the URI of corresponding reference-item.
-
-The **#id** pattern illustrated above has the advantage of enabling information to be retrieved in a single HTTP round-trip. Note that in the example give we use a trailing **#id** with the intention that **../school/100866** is a relatively small ‘document’ with a single primary topic, in this case the school in question.
-
-In principle we could also use fragment in a different way eg:
-
-	**../school#100866**
-
-The problem with this approach is that it makes **../school** a relatively large ‘document’ that would need describe all schools that could be referenced within the document by the trailing fragment - something of the order of 65 thousand schools.
+The problem with this approach is that it makes **`../school`** a relatively large ‘document’ that would need describe all schools that could be referenced within the document by the trailing fragment - something of the order of 65 thousand schools.
 
 More details of these two options are presented in "[Cool URIs for the Semantic Web](http://www.w3.org/TR/cooluris/)", a W3C Note. 
 
@@ -633,19 +630,17 @@ There is also on-going in the W3C TAG and the wider linked-data community to see
 
 At the time of writing the TAG’s current work on this topic "[URLs in Data Primer W3C Editor's Draft 27 April 2013](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/)" is available at http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/. It is expected that this document will be formally published as a W3C First Public Working Draft (FPWD) which is the first formal step to publication as a W3C Recommendation. [Section 5.3](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#publishing-data) (quoted below) contains advice for data publishers. 
 
-[**Editors Note**: Need to check with JeniT that what follows captures the state of affairs - at least as of 9th may 2013] 
+[**`Editors Note`**`: Need to check with JeniT that what follows captures the state of affairs - at least as of 9th may 2013`] 
 
-Roughly speaking this new advice provides for continued use of both #frag and 303 redirection patterns, with encouragement to make use of the HTTP Link: header to establish describes or describedBy relations between a thing (any kind of thing) and another (authoritative) resource that describes it.
+Roughly speaking this new advice provides for continued use of both `#frag` and `303 redirection` patterns, with encouragement to make use of the HTTP Link: header to establish describes or describedBy relations between a thing (any kind of thing) and another (authoritative) resource that describes it.
 
 *"5.3 Publishing Data*
 
-*				*
-
-*Publishers can help enable more accurate merging of data from different sites if they support URLs for each**[ entit*y](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-entity)* they or other sites may wish to describe, separate from the**[ landing page*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-landing-page)* or**[ record*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-record)* that they publish. If these additional URLs are provided, the HTTP response given when resolving a landing page or record should include a Link header indicating the URL of the entity the landing page or record describes using the ***_describes _***relationship. Similarly, if there are pages that describe the entity associated with a given URL, then: 				*
+*Publishers can help enable more accurate merging of data from different sites if they support URLs for each [entity](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-entity) they or other sites may wish to describe, separate from the [landing pages](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-landing-page) or [records](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-record) that they publish. If these additional URLs are provided, the HTTP response given when resolving a landing page or record should include a Link header indicating the URL of the entity the landing page or record describes using the _describes _ relationship. Similarly, if there are pages that describe the entity associated with a given URL, then*
 
 * *if the URL is a hash URL, the base URL should be that of the document that describes the entity*
 
-* *if the content of the entity is available on the web, the response should include a Link header with the ***_describedby _***relationship, linking to the landing page or record*
+* *if the content of the entity is available on the web, the response should include a Link header with the _'describedby'_ relationship, linking to the landing page or record*
 
 * *otherwise, the URL should result in a 303 See Other HTTP status code, redirecting to the landing page or record"*
 
@@ -653,7 +648,5 @@ The TAG document also provides further advice for to those specifying vocabulari
 
 "*5.1.2 Specifying Vocabularies*
 
-*Authors of vocabularies that are used with metaformats such as XML, JSON or RDF and that reference URLs should document how data expressed in those vocabularies should be interpreted. The vocabulary should be documented in terms of the**[ entitie*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-entity)* that data using that vocabulary describes, and how the**[ propertie*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-property)* within the vocabulary should be interpreted, whether as being properties of content on the web located at the referenced URLs or of the things described by**[ landing page*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-landing-page)* or**[ record*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-record)* located at those URLs. This interpretation may vary on a property-by-property basis, in which case the properties should be documented using the terminology given in**[ section 4. Documenting Propertie*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#documenting-properties)*."      *
-
+*Authors of vocabularies that are used with metaformats such as XML, JSON or RDF and that reference URLs should document how data expressed in those vocabularies should be interpreted. The vocabulary should be documented in terms of the**[ entitie*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-entity)* that data using that vocabulary describes, and how the**[ propertie*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-property)* within the vocabulary should be interpreted, whether as being properties of content on the web located at the referenced URLs or of the things described by**[ landing page*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-landing-page)* or**[ record*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-record)* located at those URLs. This interpretation may vary on a property-by-property basis, in which case the properties should be documented using the terminology given in**[ section 4. Documenting Propertie*s](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#documenting-properties)*." 
 The approach discussed in the document involve additional annotation in property definitions to indicate the establishment of direct, indirect, parallel and implied relationship when a property is used. This approach has yet to be tested against wider community consensus.
-
