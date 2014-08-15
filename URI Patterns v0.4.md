@@ -287,94 +287,45 @@ Note that the example URI in the table below are for illustrative purposes. Most
 | **Identifier URI**<br />(for reference items) | **`{prefix}/id[/{concept}/{key}]*`** or<br />**`{prefix}[/{concept}/{key}]*#id`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/id/station/BPW<br />http://transport.data.gov.uk/station/BPW#id<br /><br />http://transport.data.gov.uk/road/M5#id<br />http://transport.data.gov.uk/road/M5/junction/24#id<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district/8<br />http://environment.data.gov.uk/catchment-management/id/waterbody/GB108050014050 |
 | **Document URI**<br />(for reference data) | reference data for single reference items:<br />**`{prefix}/doc[/{concept}/{key}]*`** or <br />**`{prefix}[/{concept}/{key}]*`**<br /><br />optionally, reference data for lists of reference items<br />**`{prefix}/doc/{concept}/{key}]*/{concept}`** or <br />**`{prefix}[/{concept}/{key}]*/{concept}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/doc/station/BPW<br />http://transport.data.gov.uk/station/BPW<br /><br />http://transport.data.gov.uk/road/M5<br />http://transport.data.gov.uk/road/M5/junction/24<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/doc/river-basin-district/8<br />http://environment.data.gov.uk/catchment-management/doc/waterbody/GB108050014050 |
 | **Vocabulary URI**<br />(for vocabularies, ontologies, concept schemes, codelists and schema) | **`{prefix}/def{/vocabulary*}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/def/traffic<br />http://environment.data.gov.uk/def/bathing-water<br />http://transport.data.gov.uk/def/vehicle<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/def/bathing-water<br />http://environment.data.gov.uk/bathing-water-quality/def/assessment<br />http://environment.data.gov.uk/catchment-management/def/waterbody-classification |
-| **Vocabulary Term URI**<br />(for term definitions within a vocabularies, ontologies, concept schemes, codelists and schema) | **'{prefix}/def{/vocabulary*}/{term}'** | **Version 1.0 examples**<br />http://transport.data.gov.uk/def/traffic/Road<br />http://environment.data.gov.uk/def/bathing-water/CoastalBathingWater<br />http://transport.data.gov.uk/def/vehicle#hgv<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/def/bathing-water/CoastalBathingWater<br />http://environment.data.gov.uk/bathing-water-quality/def/assessment/ComplianceAssessment<br />http://environment.data.gov.uk/catchment-management/def/classification/classifcationYear |
-| **Dataset URI**<br />(for datasets) | **'{prefix}/data{/dataset*}'** | **Version 1.0 examples**<br />http://environment.data.gov.uk/data/bathing-water-quality<br />http://environment.data.gov.uk/data/bathing-water-quality/compliance<br />http://environment.data.gov.uk/data/waterbody/classification<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/data/compliance-assessment<br />http://environment.data.gov.uk/bathing-water-quality/data/sample-assessment<br />http://environment.data.gov.uk/catchment-management/data/classification-predicted-outcome<br />http://environment.data.gov.uk/catchment-management/data/classification-objective-outcome |
-
-<table>
-  <tr>
-    <td></td>
-    <td>Pattern</td>
-    <td>Example URI</td>
-  </tr>
-
-
-  <tr>
-    <td>Dataset URI
-(for datasets)</td>
-    <td>{prefix}/data{/dataset*}</td>
-    <td>Version 1.0 examples
-http://environment.data.gov.uk/data/bathing-water-quality 
-
-http://environment.data.gov.uk/data/bathing-water-quality/compliance
- 
-http://environment.data.gov.uk/data/waterbody/classification 
-
-With {/collection*}
-http://environment.data.gov.uk/bathing-water-quality
-/data/compliance-assessment 
-
-http://environment.data.gov.uk/bathing-water-quality
-/data/sample-assessment 
-
-http://environment.data.gov.uk/catchment-management/data/classification-predicted-outcome  
-
-http://environment.data.gov.uk/catchment-management/data/classification-objective-outcome </td>
-  </tr>
-  <tr>
-    <td>Data Item URI
-(for data items within datasets).</td>
-    <td>{prefix}/data{/dataset*}[/{concept}/{key}]*</td>
-    <td>Version 1.0 examples
-http://environment.data.gov.uk/data/bathing-water-quality/compliance/point/03600/year/2012 
-
-http://environment.data.gov.uk/data/waterbody/classification/waterbody/GB109055042060/year/2009
-/item/wbc_55 
-
-With {/collection*}
-http://environment.data.gov.uk/bathing-water-quality
-/data/compliance-assessment/point/03600/year/2012  
-
-http://environment.data.gov.uk/catchment-management/data/classification/waterbody/GB109055042060
-/year/2009/item/wbc_55 </td>
-  </tr>
-</table>
-
+| **Vocabulary Term URI**<br />(for term definitions within a vocabularies, ontologies, concept schemes, codelists and schema) | **`{prefix}/def{/vocabulary*}/{term}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/def/traffic/Road<br />http://environment.data.gov.uk/def/bathing-water/CoastalBathingWater<br />http://transport.data.gov.uk/def/vehicle#hgv<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/def/bathing-water/CoastalBathingWater<br />http://environment.data.gov.uk/bathing-water-quality/def/assessment/ComplianceAssessment<br />http://environment.data.gov.uk/catchment-management/def/classification/classifcationYear |
+| **Dataset URI**<br />(for datasets) | **`{prefix}/data{/dataset*}`** | **Version 1.0 examples**<br />http://environment.data.gov.uk/data/bathing-water-quality<br />http://environment.data.gov.uk/data/bathing-water-quality/compliance<br />http://environment.data.gov.uk/data/waterbody/classification<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/data/compliance-assessment<br />http://environment.data.gov.uk/bathing-water-quality/data/sample-assessment<br />http://environment.data.gov.uk/catchment-management/data/classification-predicted-outcome<br />http://environment.data.gov.uk/catchment-management/data/classification-objective-outcome |
+| **Data Item URI**<br />(for data items within datasets) | **`{prefix}/data{/dataset*}[/{concept}/{key}]*`** | **Version 1.0 examples**<br />
+http://environment.data.gov.uk/data/bathing-water-quality/compliance/point/03600/year/2012<br />
+http://environment.data.gov.uk/data/waterbody/classification/waterbody/GB109055042060/year/2009/item/wbc_55<br />
+<br />
+**With {/collection*}**<br />
+http://environment.data.gov.uk/bathing-water-quality/data/compliance-assessment/point/03600/year/2012<br />
+http://environment.data.gov.uk/catchment-management/data/classification/waterbody/GB109055042060/year/2009/item/wbc_55 |
 
 where
 
-**{prefix}** 
+* **`{prefix}`**<br /> 
 substitutes for the left-hand side patterns presented in the [preceding section](#heading=h.44sinio)[.](#heading=h.44sinio)
 
-**{type}
-**is an optional **discriminator **use to discriminate between reference items, reference data and vocabularies that share a common {concept} within a URI set. It may also serves as a weak ‘hint’ (NOTE:  It is helpful if the values used in URI path segments can appeal to human intuitions. However, strictly URI are opaque in the sense that humans (and machines) should not expect to make accurate guesses about what a given URI identifies solely from its spelling. It is better to rely on explicit statements in content (whether narrative or in some formalism). Nevertheless, URI that giving correct intuitions to developers and end-users of the data are useful.) of the kind of thing the URI might refer to.
-Such ‘hint’s can be helpful to human consumers of the URI in terms of appealing to intuitions established by consistent usage. Typical token values used in the **{type}** field are:
+* **`{type}`**<br />
+is an optional **discriminator** used to discriminate between reference items, reference data and vocabularies that share a common {concept} within a URI set. It may also serves as a weak ‘hint’ (NOTE:  It is helpful if the values used in URI path segments can appeal to human intuitions. However, strictly URI are opaque in the sense that humans (and machines) should not expect to make accurate guesses about what a given URI identifies solely from its spelling. It is better to rely on explicit statements in content (whether narrative or in some formalism). Nevertheless, URI that giving correct intuitions to developers and end-users of the data are useful.) of the kind of thing the URI might refer to.
+Such ‘hint’s can be helpful to human consumers of the URI in terms of appealing to intuitions established by consistent usage. Typical token values used in the **`{type}`** field are:<br />
+<br />
+**`def`** for vocabularies and terms;<br />
+**`id`** for URI sets and reference items;<br />
+**`doc`** for reference documents (and documents in general?);<br />
+**`data`** for datasets and data items;<br />
+**`so`** for spatial objects<br />
 
+* **`{concept}`**<br />
+provides a human readable ‘hint’ indicating some primary concept associated with a vocabulary or a URI set or an indicative name for a dataset or subset eg. school, station, road, local-authority, bathing-water, uksi, traffic-count.
 
-        * **def **for vocabularies and terms;
+* **`{key}`**<br />
+is a field that discriminates one item from another within a URI set, vocabulary or dataset. Typical **{key} **values are directly derived from a natural key or coded value within the data being published.
 
-        * **id **for URI sets and reference items;
+* **`{/vocabulary*}`**<br />
+is a short multi-segment (typically single segment) component used to gather term definitions that are organised and managed together as a vocabulary (schema, codelist, concept scheme or ontology). For URI Sets, it is common for the **`{/vocabulary*}`** component(s) to be aligned with the **`{concept}`** component(s) in Identifier and Document URI associated with reference items.
 
-        * **doc **for reference documents (and documents in general?);
-
-        * **data **for datasets and data items;
-
-        * **so** for spatial objects
-
-**{concept}
-**provides a human readable ‘hint’ indicating some primary concept associated with a vocabulary or a URI set or an indicative name for a dataset or subset eg. school, station, road, local-authority, bathing-water, uksi, traffic-count.
-
-
-{**key}
-**is a field that discriminates one item from another within a URI set, vocabulary or dataset. Typical **{key} **values are directly derived from a natural key or coded value within the data being published.
-
-**{/vocabulary*}**
-is a short multi-segment (typically single segment) component used to gather term definitions that are organised and managed together as a vocabulary (schema, codelist, concept scheme or ontology). For URI Sets, it is common for the **{/vocabulary*}** component to be aligned with the** {concept}** components in Identifier and Document URI.component(s) used by  reference item.
-
-**{concept}/{key}
-**repeating field pairs that together identify some entity and related subordinate entities eg. a road junction and exit as subordinates of a road:
-`../road/M5
-../road/M5/junction/24
-../road/M5/junction/24/exit-slip/southbound`
+* **`{concept}/{key}`**<br />
+repeating field pairs that together identify some entity and related subordinate entities eg. a road junction and exit as subordinates of a road:<br />
+**`../road/M5`**<br />
+**`../road/M5/junction/24`**<br />
+**`../road/M5/junction/24/exit-slip/southbound`**
 
 # The Publishing Commitment
 
