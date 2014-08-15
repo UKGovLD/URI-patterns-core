@@ -177,36 +177,34 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
 
 The URI patterns are presented in two parts:
 
-* a common left hand part
-
-    http://{domain}{/collection*}
+* a common left hand part<br />`http://{domain}{/collection*}`
 
 * a type specific right hand part
 
     * for URI Sets (reference items and reference data) where `{type}=’id’ or ’doc’`<br />
     `[/{type}][/{concept}/{key}]*[/{concept}][#id]`
+    
     * for vocabularies and definitions where `{type}=’def’`<br />
     `[/{type}]{/vocabulary*}[/{term}][#{term}]`
+    
     * for datasets and data items where `{type}=’data’`<br />
     `[/{type}]{/dataset*}[/{concept}/{key}]*[/{prop}]`
 
-The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0" [ [1]](#heading=h.qsh70q)[ ](#heading=h.qsh70q)are a subset of those in the this section. In particular they omit the **{/collection*}** components and do not include a `{type}` of `‘data’` introduced here for datasets and data items.
+The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0" [[1]](#heading=h.qsh70q) are a subset of those in the this section. In particular they omit the `{/collection*}` components and do not include a `{type}` of `‘data’` introduced here for datasets and data items.
 
 ## Left Hand Patterns
-
 ### General Pattern:
 
 `{prefix} = http://{domain}{/collection*}`
 
 where
 
-**{domain}****
-**is an internet DNS domain name. Administratively and operationally this delegates authority over the subordinate URI space to the organisational entity with administrative rights for the domain. 
+* `{domain}`<br />
+is an internet DNS domain name. Administratively and operationally this delegates authority over the subordinate URI space to the organisational entity with administrative rights for the domain.<br /><br />
+A `{domain}` authority may create subdomains of the form **{subdomain}.{domain}** as a means of creating a delegated URI space. The governance of a subdomain may fall within scope of the authority for the parent domain; or it may be delegated to a subordinate governance authority
 
-A** {domain}** authority may create subdomains of the form **{subdomain}.{domain}** as a means of creating a delegated URI space. The governance of a subdomain may fall within scope of the authority for the parent domain; or it may be delegated to a subordinate governance authority
-
-**{/collection*}
-**is a short sequence of URI path segments, typically one or two, that serve as a delegation point for administrative authority over the delegated URI space. These path segments fields, can also be used to affect the top-level routing of corresponding request to infrastructure. Path segments in** {/collection*} **should avoid  literal values commonly used by the **{type} **component, specifically "**def**" “**id**”, “**doc**”, “**data**” and “**so**”. This avoids a path segment within **{/collection*}** being confused with a **{type}** component (if present). 
+* `{/collection*}`<br />
+is a short sequence of URI path segments, typically one or two, that serve as a delegation point for administrative authority over the delegated URI space. These path segments fields, can also be used to affect the top-level routing of corresponding request to infrastructure. Path segments in `{/collection*}` should avoid literal values commonly used by the `{type}` component, specifically `'def'`, `'id'`, `'doc'`, `'data'` and `'so'`. This avoids a path segment within `{/collection*}` being confused with a `{type}` component (if present). 
 
 ### 
 
