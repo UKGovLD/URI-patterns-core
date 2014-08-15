@@ -281,9 +281,19 @@ Domain, including subdomain, and collection names should be aligned with key and
 
 Note that the example URI in the table below are for illustrative purposes. Most of the "Version 1.0" examples do access live linked-data with the particular exception of URI ending in a “#fragment”. At the time of writing all the “**With  {/collection*}**” examples are illustrative only.
 
-|   | **Pattern** | **Example URI ** |
+|   | **Pattern** | **Example URI** |
 |:--|:------------|:-----------------|
-|**URI Set URI**|**`{prefix}/id/{concept}`** or <br />**`{prefix}/{concept}#id`**|Version 1.0 examples<br />http://education.data.gov.uk/id/school<br />http://transport.data.gov.uk/id/road<br />http://transport.data.gov.uk/road#id<br /><br />With {/collection*}<br />http://environment.data.gov.uk/bathing-water-quality/id/bathing-water<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district<br />http://environment.data.gov.uk/catchment-management/id/waterbody</td> |
+|**URI Set URI**|**`{prefix}/id/{concept}`** or <br />**`{prefix}/{concept}#id`**| **Version 1.0 examples**<br />http://education.data.gov.uk/id/school<br />http://transport.data.gov.uk/id/road<br />http://transport.data.gov.uk/road#id<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/id/bathing-water<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district<br />http://environment.data.gov.uk/catchment-management/id/waterbody</td> |
+| **Identifier URI**<br />(for reference items) | **`{prefix}/id[/{concept}/{key}]*`** or<br />**`{prefix}[/{concept}/{key}]*#id`** | **Version 1.0 examples**<br />
+http://transport.data.gov.uk/id/station/BPW<br />
+http://transport.data.gov.uk/station/BPW#id<br />
+<br />
+http://transport.data.gov.uk/road/M5#id<br />
+http://transport.data.gov.uk/road/M5/junction/24#id<br />
+<br />
+**With {/collection*}**<br />
+http://environment.data.gov.uk/catchment-management/id/river-basin-district/8<br />
+http://environment.data.gov.uk/catchment-management/id/waterbody/GB108050014050 |
 
 <table>
   <tr>
@@ -291,23 +301,7 @@ Note that the example URI in the table below are for illustrative purposes. Most
     <td>Pattern</td>
     <td>Example URI</td>
   </tr>
-  <tr>
-    <td>URI Set URI</td>
-    <td>{prefix}/id/{concept} or 
-{prefix}/{concept}#id
-</td>
-    <td>Version 1.0 examples
-http://education.data.gov.uk/id/school
-http://transport.data.gov.uk/id/road
-http://transport.data.gov.uk/road#id 
 
-With {/collection*}
-http://environment.data.gov.uk/bathing-water-quality/id/bathing-water
-
-http://environment.data.gov.uk/catchment-management/id/river-basin-district
-
-http://environment.data.gov.uk/catchment-management/id/waterbody</td>
-  </tr>
   <tr>
     <td>Identifier URI
 (for reference items)</td>
