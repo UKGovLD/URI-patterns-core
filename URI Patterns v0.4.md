@@ -98,7 +98,7 @@ Nevertheless, it is the URI as a whole which comprises the unique identifier.
 
 The syntactic structure of URI in general is defined in [RFC3986](http://www.ietf.org/rfc/rfc3986.txt) and HTTP URI in particular in [RFC2616](http://www.ietf.org/rfc/rfc2616.txt) and in simplified form may be presented as:
 
-**'http://{authority}[/{segment}]*[?{query}][#{frag}]'**
+**`http://{authority}[/{segment}]*[?{query}][#{frag}]`**
 
 where:
 
