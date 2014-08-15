@@ -28,10 +28,7 @@ The guidance in  [[1](#bookmark=id.izhg4kr3qqdw)] has been influential outside o
 
 Separate URI pattern guidance is being developed to cover vocabularies derived from INSPIRE application schema (a.k.a data specifications) and the linked data publication of INSPIRE spatial objects. There have been significant changes in the formation of INSPIRE namespace names such that full HTTP URI can now be used to name an INSPIRE namespace which greatly simplifies the approaches that can be used for the publication of spatial-objects as linked data.
 
-    [Editors Note: the next section attempts to motivate separate 
-    consideration of Datasets which make use of, but don’t necessarily 
-    provide reference data. Datasets and data items motivate a 
-    distinct {type} = ‘data’ to separate them from id/doc/303 baggage.]
+[**`Editors Note:`** `the next section attempts to motivate separate consideration of Datasets which make use of, but don’t  necessarily provide reference data. Datasets and data items motivate a distinct {type} = ‘data’ to separate them from id/doc/303 baggage.`]
 
 # URI Sets, Vocabularies and Datasets
 
@@ -114,17 +111,11 @@ See the relevant specifications for a more detailed treatment of the structure o
 
 In patterns presented in this document, we do not make use of the optional query component, but do not prohibit its use where required to support specific applications.
 
-```
-[Editorial Discussion: There is a developing trend to start using HTTPS URI for 
-service endpoints. The domain naming guidance for services.gov.uk at:
+[**`Editorial Discussion:`** `There is a developing trend to start using HTTPS URI for service endpoints. The domain naming guidance for services.gov.uk at:`
 
-https://www.gov.uk/service-manual/operations/operating-servicegovuk-subdomains.html 
+https://www.gov.uk/service-manual/operations/operating-servicegovuk-subdomains.html
 
-mandates the use of HTTPS URIs because the provide a means of private exchange 
-and for a client to authenticate a server. We are not yet aware of widespread use 
-of HTTPS URI, and haven’t studied the impact on caching behaviours. This is something
-we need to think about as we take forward implementation.]
-```
+`mandates the use of HTTPS URIs because the provide a means of private exchange and for a client to authenticate a server. We are not yet aware of widespread use of HTTPS URI, and haven’t studied the impact on caching behaviours. This is something we need to think about as we take forward implementation.`]
 
 ## Collections
 
@@ -162,15 +153,10 @@ contributes the multi-segment component
    **`"/seg1/seg2/seg3"`**
 
 in the corresponding position of the resulting URI. From a URI parsing point-of-view we take such an expression to parse an arbitrary number of path segments into an array valued variable. Given the somewhat general nature of the patterns that follow there are several possible parsings of URI into bindings for any matching URI. However, the patterns presented here as a means to provide some guidance. Actual deployments will make more limiting choices than these somewhat open patterns allow.
-```
-    [Editorial Discussion: I’ve stayed close to the spirit of URI templates. 
-     However, I don’t know how I’d cleanly present the repeating the repeated 
-     interleaving of {concept}/{key} and {prop}/{value} in a URI template 
-     expression so have extended with home grown notation that I don’t think 
-     is too alien.  
 
-    Happy to adapt to something better defined that meets the need.]
-```
+[**`Editorial Discussion:`** `I’ve stayed close to the spirit of URI templates. However, I don’t know how I’d cleanly present the repeating the repeated interleaving of {concept}/{key} and {prop}/{value} in a URI template expression so have extended with home grown notation that I don’t think is too alien.`  
+
+`Happy to adapt to something better defined that meets the need.`]
 
 # URI Patterns
 ## Summary
@@ -208,10 +194,7 @@ is a short sequence of URI path segments, typically one or two, that serve as a 
 
 ### Choosing Domain and Collection Names
 
-```
-[Editorial Note: The content of this section was (at least initially) 
- lifted and adapted from the corresponding section of "Designing URI Sets 
- for the UK public sector - v2.0d" ]
+[**`Editorial Note:`** `The content of this section was (at least initially) lifted and adapted from the corresponding section of "Designing URI Sets for the UK public sector - v2.0d"`]
 ```
 
 **_General_**
@@ -340,7 +323,7 @@ Current responsibility for a publication is best indicated through the use of ex
 
 * **Brand, Product or Marketing names**<br />In the commercial sector considerable financial value can accrue to brand - resulting in (some) brand identities becoming long-lived and an object of trust. This effect can occur in the public-sector too, but there is less of a financial incentive toward persistence with respect to brand, product or marketing names. The purpose (function or duty) a publication serves is likely to persist longer than the colloquial name of the dataset or collection (or indeed the name of organisation publishes it).
 
-* **Status or Disposition**<br />The status of a URI Set, Dataset or Vocabulary or the disposition of an organisation towards it may change during its lifetime. For example a URI Set or Vocabulary may initially be regarded as being in-draft or might be approved for experimental use. However, once it has matured its status may change or an organisation may adopt it for more widespread use. Status or organisational disposition indications are best made using metadata. Embedding such indications in identifiers should be avoided.<br /><br />`[Editorial Discussion: I’m trying to figure whether data product names are good/bad as collection names. Where there is considerable brand capital (trust) in a ‘brand’ name there is unlikely to be pressure to change it, conversely a failed name/brand is more likely to get attention and be rebranded - the main message here is to avoid ephemeral facets in URI - better infact to have totally opaque facets - but that’s pretty people unfriendly. eg. Land Registry have recently renamed their Price Paid Information (PPI) to Price Paid Data (PPD) maybe for obvious contemporary reasons.]]`
+* **Status or Disposition**<br />The status of a URI Set, Dataset or Vocabulary or the disposition of an organisation towards it may change during its lifetime. For example a URI Set or Vocabulary may initially be regarded as being in-draft or might be approved for experimental use. However, once it has matured its status may change or an organisation may adopt it for more widespread use. Status or organisational disposition indications are best made using metadata. Embedding such indications in identifiers should be avoided.<br /><br />[**`Editorial Discussion:`** `I’m trying to figure whether data product names are good/bad as collection names. Where there is considerable brand capital (trust) in a ‘brand’ name there is unlikely to be pressure to change it, conversely a failed name/brand is more likely to get attention and be rebranded - the main message here is to avoid ephemeral facets in URI - better infact to have totally opaque facets - but that’s pretty people unfriendly. eg. Land Registry have recently renamed their Price Paid Information (PPI) to Price Paid Data (PPD) maybe for obvious contemporary reasons.`]
 
 * `[Ed: There must be more facets but I’m coming up short]`
 
@@ -355,7 +338,7 @@ In order to enable some eventual retirement of a URI Set, Dataset or Vocabulary,
 * the extent of the period for which ‘old’ URI will respond with 301/302/307 redirections and ‘new’ URI.
 * when the ‘old’ URI will cease to respond at all.
 
-**`[Note to Alex/@UKGovLD: Separate guidance needs to be developed along with *concrete* vocabulary recommendations.]`**
+[**`Note to Alex/@UKGovLD:`** `Separate guidance needs to be developed along with *concrete* vocabulary recommendations.`]
 
 ## Avoiding Changes in URI Space
 
@@ -386,7 +369,7 @@ An alternative to the current {sector}.data.gov.uk pattern would be to use a col
 
 acts as the root of a persistent URL service for public sector data publishing - that proxies requests through to infrastructure provided by the current custodian of a given collection.
 
-`[Editorial Note: this section is written under the assumption that some form of centrally guided data publishing (even linked-data publishing) will continue at or near data.gov.uk.]`
+[**`Editorial Note:`** `this section is written under the assumption that some form of centrally guided data publishing (even linked-data publishing) will continue at or near data.gov.uk.`]
 
 ## Devolved Administrations
 
