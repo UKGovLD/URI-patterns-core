@@ -141,32 +141,36 @@ that can be viewed as a coarse grain unit of publication and attribution as well
 It is expected that responsibility for maintaining the collection will be transferred as a whole when organisational change results in such a change in responsibility. A primary aim of this collection centred approach is to maintain the persistence of published URIs through such organisational change.
 
 # URI Pattern Guidance
-
 ## Pattern Notation
 
 In order to capture and present URI patterns, some notation for writing them down is required.
 
-The pattern notation used in this document is based on the "URI Template" specification defined in[ RFC6570](http://tools.ietf.org/html/rfc6570). 
+The pattern notation used in this document is based on the "URI Template" specification defined in [RFC6570](http://tools.ietf.org/html/rfc6570). 
 
-Curly braces, ie. ‘{‘ and ‘}’ are used it introduce template variable expression per [RFC6570](http://tools.ietf.org/html/rfc6570). In addition: we use matched square brackets, ie  ‘[‘ and ‘]’ are used to introduce optional components and a star, ie ‘*’ following such bracket components allows arbitrary repetition (zero or more times) of the group matched by the immediately preceding closing square bracket. Other characters outside of matched curly braces or square brackets represent literal characters to be matched.
+Curly braces, ie. ‘`{`‘ and ‘`}`’ are used it introduce template variable expression per [RFC6570](http://tools.ietf.org/html/rfc6570). In addition: we use matched square brackets, ie  ‘`[`‘ and ‘`]`’ are used to introduce optional components and a star, ie ‘`*`’ following such bracket components allows arbitrary repetition (zero or more times) of the group matched by the immediately preceding closing square bracket. Other characters outside of matched curly braces or square brackets represent literal characters to be matched.
 
 In RFC6570, a variable expression such as:
 
-**{/collection*}**
+    {/collection*}
 
 when expanded with a variable binding of:
 
-**collection=("seg1",”seg2”,”seg3”) ** 
+    collection=("seg1",”seg2”,”seg3”) 
 
 contributes the multi-segment component
 
-**"/seg1/seg2/seg3"**
+    "/seg1/seg2/seg3"
 
 in the corresponding position of the resulting URI. From a URI parsing point-of-view we take such an expression to parse an arbitrary number of path segments into an array valued variable. Given the somewhat general nature of the patterns that follow there are several possible parsings of URI into bindings for any matching URI. However, the patterns presented here as a means to provide some guidance. Actual deployments will make more limiting choices than these somewhat open patterns allow.
+```
+    [Editorial Discussion: I’ve stayed close to the spirit of URI templates. 
+     However, I don’t know how I’d cleanly present the repeating the repeated 
+     interleaving of {concept}/{key} and {prop}/{value} in a URI template 
+     expression so have extended with home grown notation that I don’t think 
+     is too alien.  
 
-`[Editorial Discussion: I’ve stayed close to the spirit of URI templates. However, I don’t know how I’d cleanly present the repeating the repeated interleaving of {concept}/{key} and {prop}/{value} in a URI template expression so have extended with home grown notation that I don’t think is too alien.  `
-
-`Happy to adapt to something better defined that meets the need.]`
+    Happy to adapt to something better defined that meets the need.]
+```
 
 # URI Patterns
 
