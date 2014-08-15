@@ -28,7 +28,10 @@ The guidance in  [[1](#bookmark=id.izhg4kr3qqdw)] has been influential outside o
 
 Separate URI pattern guidance is being developed to cover vocabularies derived from INSPIRE application schema (a.k.a data specifications) and the linked data publication of INSPIRE spatial objects. There have been significant changes in the formation of INSPIRE namespace names such that full HTTP URI can now be used to name an INSPIRE namespace which greatly simplifies the approaches that can be used for the publication of spatial-objects as linked data.
 
-`[Editors Note: the next section attempts to motivate separate consideration of Datasets which make use of, but don’t necessarily provide reference data. Datasets and data items motivate a distinct {type} = ‘data’ to separate them from id/doc/303 baggage.]`
+    [Editors Note: the next section attempts to motivate separate 
+    consideration of Datasets which make use of, but don’t necessarily 
+    provide reference data. Datasets and data items motivate a 
+    distinct {type} = ‘data’ to separate them from id/doc/303 baggage.]
 
 # URI Sets, Vocabularies and Datasets
 
@@ -41,21 +44,21 @@ A URI Set, defined as:
 
 A URI Set is usually comprised of:
 
-* a *[_URI Set URI_](#bookmark=id.1951n8qjx241)* to name the set and which can be used to 
+* a **[_URI Set URI_](#bookmark=id.1951n8qjx241)** to name the set and which can be used to 
     * associated metadata to describe the set’s:
         * spatial, temporal and thematic coverage; 
         * provenance and data-quality
     * optionally list the reference items that are members of the URI set.
 
-* an *[_Identifier URI_](#bookmark=id.7tcuws422kuj)* for each reference item within the URI Set (e.g. schools, stations, hospitals, monitoring points...)
+* an **[_Identifier URI_](#bookmark=id.7tcuws422kuj)** for each reference item within the URI Set (e.g. schools, stations, hospitals, monitoring points...)
 
 * _reference data_ describing each reference item
 
-* optionally, one or more *[_Vocabulary URI_](#bookmark=id.xcn3zs6pru85)* for vocabularies, ontologies, concept schemes or codelist used in the description of reference items.
+* optionally, one or more **[_Vocabulary URI_](#bookmark=id.xcn3zs6pru85)** for vocabularies, ontologies, concept schemes or codelist used in the description of reference items.
 
 ### Vocabularies
 
-In order to describe a [reference item](#bookmark=id.8sukpqqnotxw) or a data item it may be necessary to develop and publish one or more groupings of related terms (an ontology, a vocabulary, concept scheme and/or codelists) that can be used to facilitate such a description. These terms and their containing vocabularies are named with [Vocabulary UR](#bookmark=id.xcn3zs6pru85)[I](#bookmark=id.xcn3zs6pru85).
+In order to describe a [reference item](#bookmark=id.8sukpqqnotxw) or a data item it may be necessary to develop and publish one or more groupings of related terms (an ontology, a vocabulary, concept scheme and/or codelists) that can be used to facilitate such a description. These terms and their containing vocabularies are named with [Vocabulary URI](#bookmark=id.xcn3zs6pru85).
 
 By preference, data publishers should avoid creating new vocabularies and make use of widely used pre-existing vocabularies provided that they are sufficiently expressive to describe the reference items in the URI Set being published.
 
@@ -73,24 +76,22 @@ Ideally, most reference items that a data publisher needs will already have been
 
 Unlike URI Sets, which exist to create common points of reference, Datasets make use of the URI for reference items within URI Sets to give context to the data items that they contain. As with URI Sets and reference items, Datasets and data items are named with URI.
 
-`Examples of currently published URI sets and datasets can be found at: http://data.gov.uk/linked-data `
+    Examples of currently published URI sets and datasets can be 
+    found at: http://data.gov.uk/linked-data
 
 # URI Spaces and Collections
 
 Linked data publishing makes extensive use of [HTTP URI](#bookmark=id.in2hhs5y1nv1) as identifiers for all manner of things: important reference items such as schools, hospitals, roads, stations, legislation, people, places, events - often collectively referred to as ‘things’. The basic ‘contract’ of linked data is that a URI used as an identifier in this way can be simply ‘looked-up’ on the web to find information about the ‘thing’ referenced by that URI.
 
- 
-
 The space of http URIs is huge and a linked data publisher needs to consider to how they are going to use a portion of  http URI space, to support their linked data publication. There are two perspectives to consider:
 
 * The administrative perspective is focussed on (recursively) dividing up a URI space into subspaces and delegating the publishing and governance authority over the resulting subspace to another party - ultimately to the point where individual URI assigned to individual ‘things’.  This is primarily concerned with avoiding duplicate use of the same URI both at a given moment and over time. Ideally, a given URI should only ever be used to refer to one ‘thing’, although that ‘thing’ need not be static. Its state may change over time eg. the front page of a newspaper or a weather forecast for a particular area. The use of natural keys in the formation of URIs aids in the establishment of distinct URI for distinct ‘things’. 
-
 
 * The operational perspective on a URI spaces is concerned with the the practicalities of routing HTTP protocol requests to the correct pieces of infrastructure (servers) to provided the expected response.
 
 Practically speaking the administration of a URI space involves keeping track of which portions of the space have been delegated to what authorities. This may take the form of a list, sometimes called a register, which may carry sufficient information to enable HTTP requests targeted on a particular delegated region of URI space to be routed toward infrastructure supporting the resources assigned within that delegated space. The use of a register to drive request routing in this way enables data to be published at URI that exhibit a degree of persistence even though the publishing authority and supporting infrastructure may both change over time. For example, see "UKGovLD Registry" [[3]](#bookmark=id.lbxhd84lxa0). Register entries can be updated to reflect infrastructure and organisational change whilst maintaining stable, dereferencable URI for URI Sets, Datasets and vocabularies. 
 
-![image alt text](image_0.png)
+![Partitioning URI for request routing and entity identification or discrimination](image_0.png)
 
 Authority for any URI space is rooted in the internet Domain Name System (DNS) through the ‘ownership’ of internet domain names. Organisations need to define administrative and operational aspects of URI space management. The parts of a URI that are typically used in delegating authority and routings request tend to occur toward the left-hand end of a URI, while the parts more concerned with distinguishing between individual entities tend to occur toward the right-hand end of a URI.
 
@@ -98,19 +99,16 @@ Nevertheless, it is the URI as a whole which comprises the unique identifier.
 
 ## HTTP URI
 
-The syntactic structure of URI in general is defined in[ RFC3986](http://www.ietf.org/rfc/rfc3986.txt) and HTTP URI in particular in[ RFC2616](http://www.ietf.org/rfc/rfc2616.txt) and in simplified form may be presented as:
+The syntactic structure of URI in general is defined in [RFC3986](http://www.ietf.org/rfc/rfc3986.txt) and HTTP URI in particular in [RFC2616](http://www.ietf.org/rfc/rfc2616.txt) and in simplified form may be presented as:
 
-`http://{authority}[/{segment}]*[?{query}][#{frag}]`
+    http://{authority}[/{segment}]*[?{query}][#{frag}]
 
 where:
 
-* {authority}	carries a single internet DNS name
-
-* {segment} 	provides for an arbitrary number of path segments 
-
-* {query} 		provides for an optional (form) query to be embedded in a URI
-
-* {frag} 		provides for an optional fragment identifier.
+* `{authority}` carries a single internet DNS name
+* `{segment}`   provides for an arbitrary number of path segments 
+* `{query}`     provides for an optional (form) query to be embedded in a URI
+* `{frag}`      provides for an optional fragment identifier.
 
 See the relevant specifications for a more detailed treatment of the structure of URI and the the character restrictions on their components parts.
 
