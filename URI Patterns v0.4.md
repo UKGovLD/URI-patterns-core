@@ -294,7 +294,7 @@ Note that the example URI in the table below are for illustrative purposes. Most
 where
 
 * **`{prefix}`**<br /> 
-substitutes for the left-hand side patterns presented in the [preceding section](#heading=h.44sinio)[.](#heading=h.44sinio)
+substitutes for the left-hand side patterns presented in the [preceding section](#heading=h.44sinio).
 
 * **`{type}`**<br />
 is an optional **discriminator** used to discriminate between reference items, reference data and vocabularies that share a common {concept} within a URI set. It may also serves as a weak ‘hint’ (NOTE:  It is helpful if the values used in URI path segments can appeal to human intuitions. However, strictly URI are opaque in the sense that humans (and machines) should not expect to make accurate guesses about what a given URI identifies solely from its spelling. It is better to rely on explicit statements in content (whether narrative or in some formalism). Nevertheless, URI that giving correct intuitions to developers and end-users of the data are useful.) of the kind of thing the URI might refer to.
@@ -335,35 +335,24 @@ However it needs to  be recognized that in the long-term change is inevitable. S
 
 There are a number of facets which it is tempting to include within the structure of a URI that should be avoided, because they may give rise to more frequent change or attract pressure to relocate reference items and associated reference data in URI space.
 
-
-* **Publishing Organisation**
-Coarse grain and fine grain organisational change can lead to changes in publishing responsibility for URI Sets and  Datasets. Some changes are more cosmetic (renaming), others are more structural. Structural changes may result in both division and mergers of work-groups with associated transfers of publishing responsibilities for data. 
-
+* **Publishing Organisation**<br /> Coarse grain and fine grain organisational change can lead to changes in publishing responsibility for URI Sets and  Datasets. Some changes are more cosmetic (renaming), others are more structural. Structural changes may result in both division and mergers of work-groups with associated transfers of publishing responsibilities for data.<br /><br />
 Current responsibility for a publication is best indicated through the use of explicit metadata about a collection or indeed individual items within a collection.
 
-* **Brand, Product or Marketing names**
-In the commercial sector considerable financial value can accrue to brand - resulting in (some) brand identities becoming long-lived and an object of trust. This effect can occur in the public-sector too, but there is less of a financial incentive toward persistence with respect to brand, product or marketing names. The purpose (function or duty) a publication serves is likely to persist longer than the colloquial name of the dataset or collection (or indeed the name of organisation publishes it).
+* **Brand, Product or Marketing names**<br />In the commercial sector considerable financial value can accrue to brand - resulting in (some) brand identities becoming long-lived and an object of trust. This effect can occur in the public-sector too, but there is less of a financial incentive toward persistence with respect to brand, product or marketing names. The purpose (function or duty) a publication serves is likely to persist longer than the colloquial name of the dataset or collection (or indeed the name of organisation publishes it).
 
-* **Status or Disposition
-**The status of a URI Set, Dataset or Vocabulary or the disposition of an organisation towards it may change during its lifetime. For example a URI Set or Vocabulary may initially be regarded as being in-draft or might be approved for experimental use. However, once it has matured its status may change or an organisation may adopt it for more widespread use. Status or organisational disposition indications are best made using metadata. Embedding such indications in identifiers should be avoided.
-
-`[Editorial Discussion: I’m trying to figure whether data product names are good/bad as collection names. Where there is considerable brand capital (trust) in a ‘brand’ name there is unlikely to be pressure to change it, conversely a failed name/brand is more likely to get attention and be rebranded - the main message here is to avoid ephemeral facets in URI - better infact to have totally opaque facets - but that’s pretty people unfriendly. eg. Land Registry have recently renamed their Price Paid Information (PPI) to Price Paid Data (PPD) maybe for obvious contemporary reasons.]]`
-
+* **Status or Disposition**<br />The status of a URI Set, Dataset or Vocabulary or the disposition of an organisation towards it may change during its lifetime. For example a URI Set or Vocabulary may initially be regarded as being in-draft or might be approved for experimental use. However, once it has matured its status may change or an organisation may adopt it for more widespread use. Status or organisational disposition indications are best made using metadata. Embedding such indications in identifiers should be avoided.<br /><br />`[Editorial Discussion: I’m trying to figure whether data product names are good/bad as collection names. Where there is considerable brand capital (trust) in a ‘brand’ name there is unlikely to be pressure to change it, conversely a failed name/brand is more likely to get attention and be rebranded - the main message here is to avoid ephemeral facets in URI - better infact to have totally opaque facets - but that’s pretty people unfriendly. eg. Land Registry have recently renamed their Price Paid Information (PPI) to Price Paid Data (PPD) maybe for obvious contemporary reasons.]]`
 
 * `[Ed: There must be more facets but I’m coming up short]`
 
 ## Managing Changes in URI Space
 
-Whilst the previous section emphasises the importance of persistent identifiers in public sector URI spaces, the reality is that ‘permanent’ (as in forever) is at best only achievable as a succession of commitments to bounded periods of ‘persistence’. In the long-long term, change is inevitable, and some URI Sets, Datasets or vocabularies, will need to be relocated in [URI Spac](#bookmark=id.ighdlypmxthp)[e](#bookmark=id.ighdlypmxthp), or retired. The status and intended permanence of URI Sets, Datasets and their supporting vocabularies is best expressed as metadata associated with the corresponding URI Set, Dataset or vocabulary.
+Whilst the previous section emphasises the importance of persistent identifiers in public sector URI spaces, the reality is that ‘permanent’ (as in forever) is at best only achievable as a succession of commitments to bounded periods of ‘persistence’. In the long-long term, change is inevitable, and some URI Sets, Datasets or vocabularies, will need to be relocated in [URI Space](#bookmark=id.ighdlypmxthp), or retired. The status and intended permanence of URI Sets, Datasets and their supporting vocabularies is best expressed as metadata associated with the corresponding URI Set, Dataset or vocabulary.
 
 In order to enable some eventual retirement of a URI Set, Dataset or Vocabulary, associated metadata SHOULD indicate the status of the corresponding publication and some explicit indication the longevity of both the publication and its URIs. Ideally this should establish a cycle of renewal such that the withdrawal or transition to a new location is indicated through metadata well in advance of either occurrence. This may involve the use of metadata to indicate:
 
 * the extent of the period over which the URI are assured of a response
-
 * the extend of the period for which the ‘old’ URI will continue to be served, but with a deprecated status (in metadata)
-
 * the extent of the period for which ‘old’ URI will respond with 301/302/307 redirections and ‘new’ URI.
-
 * when the ‘old’ URI will cease to respond at all.
 
 **`[Note to Alex/@UKGovLD: Separate guidance needs to be developed along with *concrete* vocabulary recommendations.**]` 
@@ -374,27 +363,26 @@ The use of a PURL (persistent URL) like approach to the allocation of URI spaces
 
 Ideally data should be published to make references using the ‘persistent’ URI of some reference or data item.
 
-Where this is not possible and references in data are made using more ‘ephemeral’ URIs, data published at those more ‘ephemeral’ URI SHOULD include **owl:sameAs **references to their ‘persistent’ counterpart (if such exists).
+Where this is not possible and references in data are made using more ‘ephemeral’ URIs, data published at those more ‘ephemeral’ URI SHOULD include **`owl:sameAs`**references to their ‘persistent’ counterpart (if such exists).
 
 # Application of Patterns
-
 ## Central Government
 
 Application of this collection based approach extends the primary URI pattern for data.gov.uk sectors from:
 
-	`http://{sector}.data.gov.uk/{type}[/{concept}/{key}]*[/{concept}]`
+**`http://{sector}.data.gov.uk/{type}[/{concept}/{key}]*[/{concept}]`**
 
 to
 
-`http://{sector}.data.gov.uk{/collection*}{/type}[/{concept}/{key}]*[/{concept}]`
+**`http://{sector}.data.gov.uk{/collection*}{/type}[/{concept}/{key}]*[/{concept}]`**
 
-allowing for more ‘structure’ to the left of the now optional {type} component.
+allowing for more ‘structure’ to the left of the now optional **`{type}`** component.
 
-To avoid clashes with URI assignments under v1.0 URI patterns and these revised patterns, the segments of the **{/collection*} **component may NOT use literal values commonly used by the** {type}** component, specifically "**def**" “**id**”, “**doc**”, “**data**” and “**so**”.
+To avoid clashes with URI assignments under v1.0 URI patterns and these revised patterns, the segments of the **`{/collection*}`** component may NOT use literal values commonly used by the **`{type}`** component, specifically **`'def'`**, **`'id'`**, **`'doc'`**, **`'data'`** and **`'so'`**.
 
 An alternative to the current {sector}.data.gov.uk pattern would be to use a collection based approach where:
 
-	http://data.gov.uk/{collection}/(.*)
+	**`http://data.gov.uk/{collection}/(.*)`**
 
 acts as the root of a persistent URL service for public sector data publishing - that proxies requests through to infrastructure provided by the current custodian of a given collection.
 
@@ -405,45 +393,36 @@ acts as the root of a persistent URL service for public sector data publishing -
 UK devolved administrations operated under the following top-level domains.
 
 * Wales			wales.gov.uk
-
 * Scotland		scotland.gov.uk
-
 * Northern Ireland		northernireland.gov.uk
 
 These top-level domain names are consider to be persistent and unlikely to change in the foreseeable future.
 
 The following patterns are suggested as patterns for the left-hand component of URI patterns.
 
-* http://data.{country}.gov.uk{/collection*}
+* **`http://data.{country}.gov.uk{/collection*}`**
+* **`http://data.{country}.gov.uk/{sector}{/collection*}`**
+* **`http://{sector}.data.{country}.gov.uk{/collection*}`**
 
-* http://data.{country}.gov.uk/{sector}{/collection*}
-
-* http://{sector}.data.{country}.gov.uk{/collection*}
-
-If {sector} is used, whether as sub-domain in a DNS name or the leftmost URI path segment this guidance encourages the alignment of tokens used in {sector} positions across the UK.
+If **`{sector}`** is used, whether as sub-domain in a DNS name or the leftmost URI path segment this guidance encourages the alignment of tokens used in **`{sector}`** positions across the UK.
 
 ## Trading Fund Organisatons
 
-There are numerous[ UK trading funds](http://en.wikipedia.org/wiki/Trading_fund#United_Kingdom) that have mixed practices with respect to their web presence and branding outside of gov.uk internet domains. Several have at least registered .co.uk and .com variants of their domain names at least as a means of protecting their ‘brand’ identity from domain squatting. Practice is also mixed as to whether visitors to non .gov.uk domains are redirected to a canonical .gov.uk site; the site is effectively cloned at the non .gov.uk domains; or presented with distinct sites reflecting public sector and commercial sector roles.
+There are numerous [UK trading funds](http://en.wikipedia.org/wiki/Trading_fund#United_Kingdom) that have mixed practices with respect to their web presence and branding outside of gov.uk internet domains. Several have at least registered .co.uk and .com variants of their domain names at least as a means of protecting their ‘brand’ identity from domain squatting. Practice is also mixed as to whether visitors to non .gov.uk domains are redirected to a canonical .gov.uk site; the site is effectively cloned at the non .gov.uk domains; or presented with distinct sites reflecting public sector and commercial sector roles.
 
 Trading fund name and hence the domain names where they operate, are likely to be subject to occasional change. In publishing data at URI that incorporate a trading-fund name eg. companieshouse.gov.uk, ordnance-survey.co.uk, metoffice.com and so forth, consideration should be given to how a future change of corporate identity will would affect the URI used in published data. In particular whether and how a transition would be managed (see [Managing Changes in URI Space](#heading=h.3rdcrjn)[)](#heading=h.3rdcrjn). 
 
-
 Subject to consideration transition issues arising from organisational and ‘brand’ identity change within trading funds, trading funds are likely to organise their data publication under domains such as:
 
-* http://data.{trading-fund}.gov.uk{/collection*}
-
-* http://data.{trading-fund}.co.uk{/collection*}
-
-* http://data.{trading-fund}.com{/collection*}
+* **`http://data.{trading-fund}.gov.uk{/collection*}`**
+* **`http://data.{trading-fund}.co.uk{/collection*}`**
+* **`http://data.{trading-fund}.com{/collection*}`**
 
 or more generally
 
-* http://{subdomain}.{trading-fund}.gov.uk{/collection*}
-
-* http://{subdomain}.{trading-fund}.co.uk{/collection*}
-
-* http://{subdomain}.{trading-fund}.com{/collection*}
+* **`http://{subdomain}.{trading-fund}.gov.uk{/collection*}`**
+* **`http://{subdomain}.{trading-fund}.co.uk{/collection*}`**
+* **`http://{subdomain}.{trading-fund}.com{/collection*}`**
 
 care should be taken to avoid volatile product names as subdomains or collection names, as product rebranding may be more frequent than organisational change.
 
@@ -451,26 +430,22 @@ care should be taken to avoid volatile product names as subdomains or collection
 
 Local Authorities are relatively long-lived organisations and in general are stable enough to publish under one or more of their own subdomains:
 
-* http://data.{local-authority}.gov.uk{/collection*}
-
-* http://{sub-domain}.{local-authority}.gov.uk{/collection*}
+* **`http://data.{local-authority}.gov.uk{/collection*}`**
+* **`http://{sub-domain}.{local-authority}.gov.uk{/collection*}`**
 
 Internal organisational change is likely to be more frequent that a top-level change of the local-authorities identity brought about by occasional local government reorganisation which generally signalled well(?) in advance by the progress of the legislation necessary to effect such change. Sub-domain and collection naming are subject to the same considerations as other categories of publishers and should avoid alignment with internal organisational structure. 
 
-Identity change brought about by local-government reorganisation can be addressed through the use of explicit metadata indicating the status and intended longevity of any published URI Sets, Datasets or Vocabularies (see [Managing Changes in URI Space](#heading=h.3rdcrjn)[)](#heading=h.3rdcrjn). Changes in status or longevity SHOULD be indicated in metadata as early as possible when the legislation effecting the change surfaces.
+Identity change brought about by local-government reorganisation can be addressed through the use of explicit metadata indicating the status and intended longevity of any published URI Sets, Datasets or Vocabularies (see [Managing Changes in URI Space](#heading=h.3rdcrjn)). Changes in status or longevity SHOULD be indicated in metadata as early as possible when the legislation effecting the change surfaces.
 
 # Definitions
 
-URI Set	
-	"a collection of reference data published using URIs, about a single concept, governed from a single source." [[1]](#heading=h.qsh70q)
+<dl>
+<dt>URI Set</dt><dd>	
+	"a collection of reference data published using URIs, about a single concept, governed from a single source." [[1]](#heading=h.qsh70q)</dd>
 
- 
-
-reference data
-authoritative data provided as part of a URI Set about particular reference items.
-
-reference item
-a significant resource (school, station, hospital, statute or Act of Parliament) that is member of a URI Set and about which some reference data has been provided
+<dt>reference data</dt><dd>authoritative data provided as part of a URI Set about particular reference items.</dd>
+<dt>reference item</dt><dd>a significant resource (school, station, hospital, statute or Act of Parliament) that is member of a URI Set and about which some reference data has been provided</dd>
+</dl>
 
 # Acknowledgements
 
