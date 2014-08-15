@@ -601,7 +601,7 @@ There are two commonly used patterns for assigning URI  to such ‘non-informati
 1. Use a URI with a fragment identifier eg:<br />
 **'../school/100866#id'**  
   
-The natural fragment stripping action of the HTTP protocol means that the HTTP retrieval request will be made using the URI stripped of its fragment. The content of the HTTP response, served directly with a 200 OK status code, is expected to describe the ‘thing’ (a school in the case of the example above) using its assigned URI, ie. **`../school/100866#id`** in the case of this example, as a subject identifier.  
+  The natural fragment stripping action of the HTTP protocol means that the HTTP retrieval request will be made using the URI stripped of its fragment. The content of the HTTP response, served directly with a 200 OK status code, is expected to describe the ‘thing’ (a school in the case of the example above) using its assigned URI, ie. **`../school/100866#id`** in the case of this example, as a subject identifier.  
   
 Where the fragment identifier pattern is used, the fragment "**`id`**" shall always imply that the URI identifies a (real-world) "thing".
 
