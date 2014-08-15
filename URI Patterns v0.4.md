@@ -616,20 +616,20 @@ At the time of writing the TAG’s current work on this topic "[URLs in Data Pri
 
 Roughly speaking this new advice provides for continued use of both `#frag` and `303 redirection` patterns, with encouragement to make use of the HTTP Link: header to establish describes or describedBy relations between a thing (any kind of thing) and another (authoritative) resource that describes it.
 
-*"5.3 Publishing Data*
-
-*Publishers can help enable more accurate merging of data from different sites if they support URLs for each [entity](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-entity) they or other sites may wish to describe, separate from the [landing pages](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-landing-page) or [records](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-record) that they publish. If these additional URLs are provided, the HTTP response given when resolving a landing page or record should include a Link header indicating the URL of the entity the landing page or record describes using the _describes _ relationship. Similarly, if there are pages that describe the entity associated with a given URL, then*
-
-* *if the URL is a hash URL, the base URL should be that of the document that describes the entity*
-
-* *if the content of the entity is available on the web, the response should include a Link header with the _'describedby'_ relationship, linking to the landing page or record*
-
-* *otherwise, the URL should result in a 303 See Other HTTP status code, redirecting to the landing page or record"*
+> *"5.3 Publishing Data*
+> 
+> *Publishers can help enable more accurate merging of data from different sites if they support URLs for each [entity](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-entity) they or other sites may wish to describe, separate from the [landing pages](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-landing-page) or [records](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-record) that they publish. If these additional URLs are provided, the HTTP response given when resolving a landing page or record should include a Link header indicating the URL of the entity the landing page or record describes using the _describes _ relationship. Similarly, if there are pages that describe the entity associated with a given URL, then*
+> 
+> * *if the URL is a hash URL, the base URL should be that of the document that describes the entity*
+>
+> * *if the content of the entity is available on the web, the response should include a Link header with the _'describedby'_ relationship, linking to the landing page or record*
+> 
+> * *otherwise, the URL should result in a 303 See Other HTTP status code, redirecting to the landing page or record"*
 
 The TAG document also provides further advice for to those specifying vocabularies in [Section 5.1.2](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#specifying-vocabularies)	
 
-"*5.1.2 Specifying Vocabularies*
-
-*Authors of vocabularies that are used with metaformats such as XML, JSON or RDF and that reference URLs should document how data expressed in those vocabularies should be interpreted. The vocabulary should be documented in terms of the [entities](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-entity) that data using that vocabulary describes, and how the [properties](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-property) within the vocabulary should be interpreted, whether as being properties of content on the web located at the referenced URLs or of the things described by [landing pages](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-landing-page) or [records](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-record) located at those URLs. This interpretation may vary on a property-by-property basis, in which case the properties should be documented using the terminology given in [section 4. Documenting Properties](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#documenting-properties).*"
+> "*5.1.2 Specifying Vocabularies*
+> 
+> *Authors of vocabularies that are used with metaformats such as XML, JSON or RDF and that reference URLs should document how data expressed in those vocabularies should be interpreted. The vocabulary should be documented in terms of the [entities](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-entity) that data using that vocabulary describes, and how the [properties](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-property) within the vocabulary should be interpreted, whether as being properties of content on the web located at the referenced URLs or of the things described by [landing pages](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-landing-page) or [records](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#dfn-record) located at those URLs. This interpretation may vary on a property-by-property basis, in which case the properties should be documented using the terminology given in [section 4. Documenting Properties](http://www.w3.org/2001/tag/doc/urls-in-data-2013-04-27/#documenting-properties).*"
 
 The approach discussed in the document involve additional annotation in property definitions to indicate the establishment of direct, indirect, parallel and implied relationship when a property is used. This approach has yet to be tested against wider community consensus.
