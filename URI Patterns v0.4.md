@@ -288,6 +288,7 @@ Note that the example URI in the table below are for illustrative purposes. Most
 | **Document URI**<br />(for reference data) | reference data for single reference items:<br />**`{prefix}/doc[/{concept}/{key}]*`** or <br />**`{prefix}[/{concept}/{key}]*`**<br /><br />optionally, reference data for lists of reference items<br />**`{prefix}/doc/{concept}/{key}]*/{concept}`** or <br />**`{prefix}[/{concept}/{key}]*/{concept}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/doc/station/BPW<br />http://transport.data.gov.uk/station/BPW<br /><br />http://transport.data.gov.uk/road/M5<br />http://transport.data.gov.uk/road/M5/junction/24<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/doc/river-basin-district/8<br />http://environment.data.gov.uk/catchment-management/doc/waterbody/GB108050014050 |
 | **Vocabulary URI**<br />(for vocabularies, ontologies, concept schemes, codelists and schema) | **`{prefix}/def{/vocabulary*}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/def/traffic<br />http://environment.data.gov.uk/def/bathing-water<br />http://transport.data.gov.uk/def/vehicle<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/def/bathing-water<br />http://environment.data.gov.uk/bathing-water-quality/def/assessment<br />http://environment.data.gov.uk/catchment-management/def/waterbody-classification |
 | **Vocabulary Term URI**<br />(for term definitions within a vocabularies, ontologies, concept schemes, codelists and schema) | **'{prefix}/def{/vocabulary*}/{term}'** | **Version 1.0 examples**<br />http://transport.data.gov.uk/def/traffic/Road<br />http://environment.data.gov.uk/def/bathing-water/CoastalBathingWater<br />http://transport.data.gov.uk/def/vehicle#hgv<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/def/bathing-water/CoastalBathingWater<br />http://environment.data.gov.uk/bathing-water-quality/def/assessment/ComplianceAssessment<br />http://environment.data.gov.uk/catchment-management/def/classification/classifcationYear |
+| **Dataset URI**<br />(for datasets) | **'{prefix}/data{/dataset*}'** | **Version 1.0 examples**<br />http://environment.data.gov.uk/data/bathing-water-quality<br />http://environment.data.gov.uk/data/bathing-water-quality/compliance<br />http://environment.data.gov.uk/data/waterbody/classification<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/data/compliance-assessment<br />http://environment.data.gov.uk/bathing-water-quality/data/sample-assessment<br />http://environment.data.gov.uk/catchment-management/data/classification-predicted-outcome<br />http://environment.data.gov.uk/catchment-management/data/classification-objective-outcome |
 
 <table>
   <tr>
@@ -297,26 +298,6 @@ Note that the example URI in the table below are for illustrative purposes. Most
   </tr>
 
 
-
-  <tr>
-    <td>Vocabulary Term URI
-(for term definitions within a vocabularies, ontologies, concept schemes, codelists and schema)</td>
-    <td>{prefix}/def{/vocabulary*}/{term} or 
-{prefix}}/def{/vocabulary*}#{term}</td>
-    <td>Version 1.0 examples
-http://transport.data.gov.uk/def/traffic/Road
-
-http://environment.data.gov.uk/def/bathing-water/CoastalBathingWater
-
-http://transport.data.gov.uk/def/vehicle#hgv 
-
-With {/collection*}
-http://environment.data.gov.uk/bathing-water-quality/def/bathing-water/CoastalBathingWater 
-
-http://environment.data.gov.uk/bathing-water-quality/def/assessment/ComplianceAssessment  
-
-http://environment.data.gov.uk/catchment-management/def/classification/classifcationYear </td>
-  </tr>
   <tr>
     <td>Dataset URI
 (for datasets)</td>
