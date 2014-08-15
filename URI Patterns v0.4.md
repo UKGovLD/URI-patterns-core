@@ -285,7 +285,7 @@ Note that the example URI in the table below are for illustrative purposes. Most
 |:--|:------------|:-----------------|
 |**URI Set URI**|**`{prefix}/id/{concept}`** or <br />**`{prefix}/{concept}#id`**| **Version 1.0 examples**<br />http://education.data.gov.uk/id/school<br />http://transport.data.gov.uk/id/road<br />http://transport.data.gov.uk/road#id<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/bathing-water-quality/id/bathing-water<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district<br />http://environment.data.gov.uk/catchment-management/id/waterbody</td> |
 | **Identifier URI**<br />(for reference items) | **`{prefix}/id[/{concept}/{key}]*`** or<br />**`{prefix}[/{concept}/{key}]*#id`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/id/station/BPW<br />http://transport.data.gov.uk/station/BPW#id<br /><br />http://transport.data.gov.uk/road/M5#id<br />http://transport.data.gov.uk/road/M5/junction/24#id<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/id/river-basin-district/8<br />http://environment.data.gov.uk/catchment-management/id/waterbody/GB108050014050 |
-| **Document URI**<br />(for reference data) | reference data for single reference items:<br />**`{prefix}/doc[/{concept}/{key}]*`** or <br />**`{prefix}[/{concept}/{key}]*'**<br /><br />optionally, reference data for lists of reference items<br />**`{prefix}/doc/{concept}/{key}]*/{concept}`** or <br />**`{prefix}[/{concept}/{key}]*/{concept}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/doc/station/BPW<br />http://transport.data.gov.uk/station/BPW<br /><br />http://transport.data.gov.uk/road/M5<br />http://transport.data.gov.uk/road/M5/junction/24<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/doc/river-basin-district/8<br /><br />http://environment.data.gov.uk/catchment-management/doc/waterbody/GB108050014050 |
+| **Document URI**<br />(for reference data) | reference data for single reference items:<br />**`{prefix}/doc[/{concept}/{key}]*`** or <br />**`{prefix}[/{concept}/{key}]*`**<br /><br />optionally, reference data for lists of reference items<br />**`{prefix}/doc/{concept}/{key}]*/{concept}`** or <br />**`{prefix}[/{concept}/{key}]*/{concept}`** | **Version 1.0 examples**<br />http://transport.data.gov.uk/doc/station/BPW<br />http://transport.data.gov.uk/station/BPW<br /><br />http://transport.data.gov.uk/road/M5<br />http://transport.data.gov.uk/road/M5/junction/24<br /><br />**With {/collection*}**<br />http://environment.data.gov.uk/catchment-management/doc/river-basin-district/8<br />http://environment.data.gov.uk/catchment-management/doc/waterbody/GB108050014050 |
 
 <table>
   <tr>
@@ -294,32 +294,7 @@ Note that the example URI in the table below are for illustrative purposes. Most
     <td>Example URI</td>
   </tr>
 
-  <tr>
-    <td>Document URI
-(for reference data)</td>
-    <td>reference data for single reference items:
-{prefix}/doc[/{concept}/{key}]* or 
-{prefix}[/{concept}/{key}]*
 
-optionally, reference data for lists of reference items
-{prefix}/doc/{concept}/{key}]*/{concept} or 
-{prefix}[/{concept}/{key}]*/{concept}</td>
-    <td>Version 1.0 examples
-http://transport.data.gov.uk/doc/station/BPW 
-http://transport.data.gov.uk/station/BPW 
-
-http://transport.data.gov.uk/road/M5  
-http://transport.data.gov.uk/road/M5/junction/24 
-
-With {/collection*}
-http://environment.data.gov.uk/catchment-management/doc/river-basin-district/8  
-
-http://environment.data.gov.uk/catchment-management/doc/waterbody/GB108050014050  
-
-
-
- </td>
-  </tr>
   <tr>
     <td>Vocabulary URI
 (for vocabularies, ontologies, concept schemes, codelists and schema)</td>
