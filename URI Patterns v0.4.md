@@ -18,13 +18,13 @@ _Please also see [URI Patterns for Location](https://github.com/UKGovLD/URI-patt
 
 # Introduction
 
-This document forms part of a developing series to support understanding and implementation of linked data or the wider use of URIs as persistent identifiers. This guide has been built on top of the experience of implementation driven by the previous public sector guidance [[1](#bookmark=id.izhg4kr3qqdw)]. With sufficient adoption, common patterns and practices create reinforcing ‘echos’ across a range of data publications such that publishers and data consumers increasingly recognise the use of the patterns and the choices implied by their use. In general guidance, such as given here with respect to URI patterns for data publishing,  aims to encapsulate best practice and minimise divergence of approach. Adoption of guidance, by its very nature, is voluntary, however, it is available to be referenced, and even mandated, as an element of policy by a data publishing authority with authoritative control over the corresponding domain name. 
+This document forms part of a developing series to support understanding and implementation of linked data or the wider use of URIs as persistent identifiers. This guide has been built on top of the experience of implementation driven by the previous public sector guidance [[1](#reference.URISetsV1)]. With sufficient adoption, common patterns and practices create reinforcing ‘echos’ across a range of data publications such that publishers and data consumers increasingly recognise the use of the patterns and the choices implied by their use. In general guidance, such as given here with respect to URI patterns for data publishing,  aims to encapsulate best practice and minimise divergence of approach. Adoption of guidance, by its very nature, is voluntary, however, it is available to be referenced, and even mandated, as an element of policy by a data publishing authority with authoritative control over the corresponding domain name. 
 
 ## Background
 
-In 2009 the Cabinet Office published "Designing URI Sets for the UK Public Sector" [[1](#bookmark=id.izhg4kr3qqdw)]  This contained initial guidance on the development of URI sets. In that case URI Sets are sets of URIs assigned as managed identifiers for groupings of significant assets such as schools, stations, hospitals, administrative areas, roads, spending categories, performance indicators and so-forth that can act as common points of reference when publishing data.
+In 2009 the Cabinet Office published "Designing URI Sets for the UK Public Sector" [[1](#reference.URISetsV1)]  This contained initial guidance on the development of URI sets. In that case URI Sets are sets of URIs assigned as managed identifiers for groupings of significant assets such as schools, stations, hospitals, administrative areas, roads, spending categories, performance indicators and so-forth that can act as common points of reference when publishing data.
 
-The guidance in  [[1](#bookmark=id.izhg4kr3qqdw)] has been influential outside of the UK, The EU ISA "Study on Persistent URI - D7.1.3" [[2](#bookmark=id.47mu61obuokz)] surveys emerging practices in designing patterns for persistent URI design across the EU and forms the basis of the Australian  Public Sector  Open data URI design [insert reference]. Many of the approach summarised there are variants of the UK patterns. It has been the basis for URI patterns used in the deployment of public sector linked data under part of the [data.gov.uk](http://data.gov.uk/linked-data) initiative. However, some of the associated practices are not well documented and there are cases where the thematic sectoring approach adopted by data.gov.uk needs to be revisited to meet the needs of devolved administrations, local authorities and trading funds that publish linked data. This document updates and extends the earlier patterns to address these need and to include the publication of both reference data (URI Sets) and datasets that make use of published reference data.
+The guidance in  [[1](#reference.URISetsV1)] has been influential outside of the UK, The EU ISA "Study on Persistent URI - D7.1.3" [[2](#reference.PersistentURI)] surveys emerging practices in designing patterns for persistent URI design across the EU and forms the basis of the Australian  Public Sector  Open data URI design [insert reference]. Many of the approach summarised there are variants of the UK patterns. It has been the basis for URI patterns used in the deployment of public sector linked data under part of the [data.gov.uk](http://data.gov.uk/linked-data) initiative. However, some of the associated practices are not well documented and there are cases where the thematic sectoring approach adopted by data.gov.uk needs to be revisited to meet the needs of devolved administrations, local authorities and trading funds that publish linked data. This document updates and extends the earlier patterns to address these need and to include the publication of both reference data (URI Sets) and datasets that make use of published reference data.
 
 Separate URI pattern guidance is being developed to cover vocabularies derived from INSPIRE application schema (a.k.a data specifications) and the linked data publication of INSPIRE spatial objects. There have been significant changes in the formation of INSPIRE namespace names such that full HTTP URI can now be used to name an INSPIRE namespace which greatly simplifies the approaches that can be used for the publication of spatial-objects as linked data.
 
@@ -32,12 +32,12 @@ Separate URI pattern guidance is being developed to cover vocabularies derived f
 
 # URI Sets, Vocabularies and Datasets
 
-This document extends earlier guidance [[1]](#bookmark=id.izhg4kr3qqdw) to better address the administration and operational issues associated with multi-tenanted use the URI space associated with a shared Internet domain name and to better provide for the needs of devolved administrations, local authorities and trading funds. It has also been extended to include the publication of both reference data (URI Sets) and Datasets, ie. data publications that make use of published reference data (URI Sets).
+This document extends earlier guidance [[1]](#reference.URISetsV1) to better address the administration and operational issues associated with multi-tenanted use the URI space associated with a shared Internet domain name and to better provide for the needs of devolved administrations, local authorities and trading funds. It has also been extended to include the publication of both reference data (URI Sets) and Datasets, ie. data publications that make use of published reference data (URI Sets).
 
 ### URI Sets
 
 A URI Set, defined as:
-	"a collection of reference data published using URIs, about a single concept, governed from a single source." [[1]](#bookmark=id.izhg4kr3qqdw)
+	"a collection of reference data published using URIs, about a single concept, governed from a single source." [[1]](#reference.URISetsV1)
 
 A URI Set is usually comprised of:
 
@@ -86,7 +86,7 @@ The space of http URIs is huge and a linked data publisher needs to consider to 
 
 * The operational perspective on a URI spaces is concerned with the the practicalities of routing HTTP protocol requests to the correct pieces of infrastructure (servers) to provided the expected response.
 
-Practically speaking the administration of a URI space involves keeping track of which portions of the space have been delegated to what authorities. This may take the form of a list, sometimes called a register, which may carry sufficient information to enable HTTP requests targeted on a particular delegated region of URI space to be routed toward infrastructure supporting the resources assigned within that delegated space. The use of a register to drive request routing in this way enables data to be published at URI that exhibit a degree of persistence even though the publishing authority and supporting infrastructure may both change over time. For example, see "UKGovLD Registry" [[3]](#bookmark=id.lbxhd84lxa0). Register entries can be updated to reflect infrastructure and organisational change whilst maintaining stable, dereferencable URI for URI Sets, Datasets and vocabularies. 
+Practically speaking the administration of a URI space involves keeping track of which portions of the space have been delegated to what authorities. This may take the form of a list, sometimes called a register, which may carry sufficient information to enable HTTP requests targeted on a particular delegated region of URI space to be routed toward infrastructure supporting the resources assigned within that delegated space. The use of a register to drive request routing in this way enables data to be published at URI that exhibit a degree of persistence even though the publishing authority and supporting infrastructure may both change over time. For example, see "UKGovLD Registry" [[3]](#reference.UKGovLDRegistry). Register entries can be updated to reflect infrastructure and organisational change whilst maintaining stable, dereferencable URI for URI Sets, Datasets and vocabularies. 
 
 ![Partitioning URI for request routing and entity identification or discrimination](image_0.png)
 
@@ -435,12 +435,12 @@ TBD
 
 # References
 
-[1]	"Designing URI Sets for the UK Public Sector", [https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector)
+<a name="reference.URISetsV1"/>[1]	"Designing URI Sets for the UK Public Sector", [https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector](https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector)
 
-[2]	"Study on persistent URIs, with identification of best practices and recommendations on the topic for the MSs and the EC" Interoperability Soultions for Europena Union Adminstrations (ISA) Deliverable D7.1.3
+<a name="reference.PersistentURI"/>[2]	"Study on persistent URIs, with identification of best practices and recommendations on the topic for the MSs and the EC" Interoperability Soultions for Europena Union Adminstrations (ISA) Deliverable D7.1.3
 [https://joinup.ec.europa.eu/sites/default/files/D7.1.3 - Study on persistent](https://joinup.ec.europa.eu/sites/default/files/D7.1.3%20-%20Study%20on%20persistent) URIs.pdf
 
-[3]	"UKGovLD Registry",  [https://github.com/der/ukl-registry-poc/wiki](https://github.com/der/ukl-registry-poc/wiki) 
+<a name="reference.UKGovLDRegistry"/>[3]	"UKGovLD Registry",  [https://github.com/der/ukl-registry-poc/wiki](https://github.com/der/ukl-registry-poc/wiki) 
 
 # Annex I data.gov.uk active sector inventory
 
