@@ -382,7 +382,7 @@ To avoid clashes with URI assignments under v1.0 URI patterns and these revised 
 
 An alternative to the current {sector}.data.gov.uk pattern would be to use a collection based approach where:
 
-	**`http://data.gov.uk/{collection}/(.*)`**
+**`http://data.gov.uk/{collection}/(.*)`**
 
 acts as the root of a persistent URL service for public sector data publishing - that proxies requests through to infrastructure provided by the current custodian of a given collection.
 
