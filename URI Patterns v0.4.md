@@ -173,27 +173,29 @@ in the corresponding position of the resulting URI. From a URI parsing point-of-
 ```
 
 # URI Patterns
-
 ## Summary
 
 The URI patterns are presented in two parts:
 
 * a common left hand part
-`http://{domain}{/collection*}
-`
+
+    http://{domain}{/collection*}
 
 * a type specific right hand part
 
     * for URI Sets (reference items and reference data) where `{type}=’id’ or ’doc’`
-`[/{type}][/{concept}/{key}]*[/{concept}][#id] `
-
-    * for vocabularies and definitions where `{type}=’def’
-[/{type}]{/vocabulary*}[/{term}][#{term}] `
-
-    * for datasets and data items where `{type}=’data’
-[/{type}]{/dataset*}[/{concept}/{key}]*[/{prop}]`
-
-The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0" [ [1]](#heading=h.qsh70q)[ ](#heading=h.qsh70q)are a subset of those in the this section. In particular they omit the **{/collection*}** components and do not include a **{type}** of **‘data’** introduced here for datasets and data items.
+```    
+    [/{type}][/{concept}/{key}]*[/{concept}][#id]
+```
+    * for vocabularies and definitions where `{type}=’def’`
+```
+    [/{type}]{/vocabulary*}[/{term}][#{term}]
+```
+    * for datasets and data items where `{type}=’data’`
+```
+    [/{type}]{/dataset*}[/{concept}/{key}]*[/{prop}]
+```
+The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0" [ [1]](#heading=h.qsh70q)[ ](#heading=h.qsh70q)are a subset of those in the this section. In particular they omit the **{/collection*}** components and do not include a `{type}` of `‘data’` introduced here for datasets and data items.
 
 ## Left Hand Patterns
 
