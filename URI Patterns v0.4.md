@@ -434,14 +434,21 @@ Identity change brought about by local-government reorganisation can be addresse
 TBD
 
 # References
-
-<dl>
-<dt><a name="reference.URISetsV1"/>[1]</dt><dd>"Designing URI Sets for the UK Public Sector",<br /><a href="https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector">https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector</a></dd>
-
-<dt><a name="reference.PersistentURI"/>[2]</dt><dd>"Study on persistent URIs, with identification of best practices and recommendations on the topic for the MSs and the EC", Interoperability Soultions for European Union Adminstrations (ISA) Deliverable D7.1.3<br /><a href="https://joinup.ec.europa.eu/sites/default/files/c0/7d/10/D7.1.3%20-%20Study%20on%20persistent%20URIs.pdf">https://joinup.ec.europa.eu/sites/default/files/c0/7d/10/D7.1.3 - Study on persistent URIs.pdf</a></dd>
-
-<dt><a name="reference.UKGovLDRegistry"/>[3]</dt><dd>"UKGovLD Registry", <br/> <a href="https://github.com/der/ukl-registry-poc/wiki">https://github.com/der/ukl-registry-poc/wiki</a></dd>
-</dl>
+<table>
+  <tr>
+     <td><a name="reference.URISetsV1"/>[1]</td>
+     <td>"Designing URI Sets for the UK Public Sector",<br /><a href="https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector">https://www.gov.uk/government/publications/designing-uri-sets-for-the-uk-public-sector</a>
+     </td>
+  </tr>
+  <tr>
+     <td><a name="reference.PersistentURI"/>[2]</td>
+     <td>"Study on persistent URIs, with identification of best practices and recommendations on the topic for the MSs and the EC", Interoperability Soultions for European Union Adminstrations (ISA) Deliverable D7.1.3<br /><a href="https://joinup.ec.europa.eu/sites/default/files/c0/7d/10/D7.1.3%20-%20Study%20on%20persistent%20URIs.pdf">https://joinup.ec.europa.eu/sites/default/files/c0/7d/10/D7.1.3 - Study on persistent URIs.pdf</a></td>
+  </tr>
+  <tr>
+     <td><a name="reference.UKGovLDRegistry"/>[3]</td>
+     <td>"UKGovLD Registry", <br/> <a href="https://github.com/der/ukl-registry-poc/wiki">https://github.com/der/ukl-registry-poc/wiki</a></td>
+  </tr>
+</table>
 
 # Annex I data.gov.uk active sector inventory
 
