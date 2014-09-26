@@ -174,7 +174,7 @@ The URI patterns are presented in two parts:
     **`[/{type}]{/vocabulary*}[/{term}][#{term}]`**
     
     * for datasets and data items where **`{type}=’data’`**<br />
-    **`[/{type}]{/dataset*}[/{concept}/{key}]*[/{prop}]`**
+    **`[/{type}]{/dataset*}[/{concept}/{key}]*[/{concept}]`**
 
 The URI patterns presented in "Designing URI Sets for the UK Public Sector v1.0" [[1]](#reference.URISetsV1) are a subset of those in the this section. In particular they omit the **`{/collection*}`** components and do not include a **`{type}`** of **`‘data’`** introduced here for datasets and data items.
 
