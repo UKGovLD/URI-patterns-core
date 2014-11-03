@@ -1,20 +1,14 @@
-
-_This document will be updated through any outcomes of the [standards.data.gov.uk](http://standards.data.gov.uk) process and published within the UKGovLD section of [data.gov.uk](http://data.gov.uk/linked-data) in February 2014. Issues can be raised and versioning will be controlled through the [UKGovLD Github repositories](https://github.com/UKGovLD/) Please also see URI Patterns for Location for for Location and INSPIRE specific patterns specialisation of this guidance._
-
-_The temporary master version of this document (as in correctly formatted) is held in: https://docs.google.com/document/d/1Id8GSMAgiWWOaKsn1TUqXPgZ17tyoKp2oKqM9UvDnjE/edit?usp=sharing this will move to the github markdown formatted file shortly_
-
 # URI Patterns
 
-v0.4
+v1.0
 
-23rd May 2013
+31st October 2014
 
 **Editor**: Stuart Williams (skw@epimorphics.com)
 
 **Drafted by:** the UK Government Linked Data Working Group (UKGovLD), including representatives from public-sector departments, agencies and local government, linked-data businesses and the broader linked-data community. 
 
-_This document will be updated through any outcomes of the [standards.data.gov.uk](http://standards.data.gov.uk) process and published within the UKGovLD section of [data.gov.uk](http://data.gov.uk/linked-data) in February 2014.  Issues can be raised and versioning will be controlled through the [UKGovLD Github repositories](https://github.com/UKGovLD/)_
-_Please also see [URI Patterns for Location](https://github.com/UKGovLD/URI-patterns-location) for Location and INSPIRE specific patterns specialisation of this guidance_
+
 
 # Introduction
 
