@@ -286,7 +286,7 @@ Such ‘hint’s can be helpful to human consumers of the URI in terms of appeal
 provides a human readable ‘hint’ indicating some primary concept associated with a vocabulary or a URI set or an indicative name for a dataset or subset eg. school, station, road, local-authority, bathing-water, uksi, traffic-count.
 
 * **`{key}`**<br />
-is a field that discriminates one item from another within a URI set, vocabulary or dataset. Typical **`{key}`**values are directly derived from a natural key or coded value within the data being published.
+is a field that discriminates one item from another within a URI set, vocabulary or dataset. Typical **`{key}`** values are directly derived from a natural key or coded value within the data being published.
 
 * **`{/vocabulary*}`**<br />
 is a short multi-segment (typically single segment) component used to gather term definitions that are organised and managed together as a vocabulary (schema, codelist, concept scheme or ontology). For URI Sets, it is common for the **`{/vocabulary*}`** component(s) to be aligned with the **`{concept}`** component(s) in Identifier and Document URI associated with reference items.
